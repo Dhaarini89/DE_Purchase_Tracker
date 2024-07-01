@@ -1,0 +1,85 @@
+[2024-07-01T12:26:00.328+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-01T12:26:00.395+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: purchase_dag.kafka_producer manual__2024-07-01T12:25:57.427092+00:00 [queued]>
+[2024-07-01T12:26:00.415+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: purchase_dag.kafka_producer manual__2024-07-01T12:25:57.427092+00:00 [queued]>
+[2024-07-01T12:26:00.416+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-07-01T12:26:00.435+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): kafka_producer> on 2024-07-01 12:25:57.427092+00:00
+[2024-07-01T12:26:00.445+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=558) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-01T12:26:00.447+0000] {standard_task_runner.py:63} INFO - Started process 559 to run task
+[2024-07-01T12:26:00.445+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'purchase_dag', 'kafka_producer', 'manual__2024-07-01T12:25:57.427092+00:00', '--job-id', '482', '--raw', '--subdir', 'DAGS_FOLDER/purchase_dag.py', '--cfg-path', '/tmp/tmpikg6zzeb']
+[2024-07-01T12:26:00.448+0000] {standard_task_runner.py:91} INFO - Job 482: Subtask kafka_producer
+[2024-07-01T12:26:00.468+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-01T12:26:00.521+0000] {task_command.py:426} INFO - Running <TaskInstance: purchase_dag.kafka_producer manual__2024-07-01T12:25:57.427092+00:00 [running]> on host 6d5f7889ee5a
+[2024-07-01T12:26:00.666+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='purchase_dag' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2024-07-01T12:25:57.427092+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-01T12:25:57.427092+00:00'
+[2024-07-01T12:26:00.667+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-01T12:26:00.692+0000] {logging_mixin.py:188} INFO - {'item_name': 'Laptop', 'date_of_purchase': '2023-01-01', 'cost': 1200.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-01T12:26:00.693+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 141 (char 140)
+[2024-07-01T12:26:00.693+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 145 (char 144)
+[2024-07-01T12:26:00.694+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 145 (char 144)
+[2024-07-01T12:26:00.694+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 145 (char 144)
+[2024-07-01T12:26:00.695+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 151 (char 150)
+[2024-07-01T12:26:00.695+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 146 (char 145)
+[2024-07-01T12:26:00.695+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 146 (char 145)
+[2024-07-01T12:26:00.696+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 143 (char 142)
+[2024-07-01T12:26:00.696+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 146 (char 145)
+[2024-07-01T12:26:00.697+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 144 (char 143)
+[2024-07-01T12:26:00.697+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 147 (char 146)
+[2024-07-01T12:26:00.697+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 158 (char 157)
+[2024-07-01T12:26:00.698+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 144 (char 143)
+[2024-07-01T12:26:00.698+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 149 (char 148)
+[2024-07-01T12:26:00.699+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 156 (char 155)
+[2024-07-01T12:26:00.699+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 150 (char 149)
+[2024-07-01T12:26:00.700+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 153 (char 152)
+[2024-07-01T12:26:00.700+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 145 (char 144)
+[2024-07-01T12:26:00.701+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 153 (char 152)
+[2024-07-01T12:26:00.701+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 145 (char 144)
+[2024-07-01T12:26:00.701+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 153 (char 152)
+[2024-07-01T12:26:00.702+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 154 (char 153)
+[2024-07-01T12:26:00.702+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 151 (char 150)
+[2024-07-01T12:26:00.703+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 149 (char 148)
+[2024-07-01T12:26:00.703+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 153 (char 152)
+[2024-07-01T12:26:00.703+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 148 (char 147)
+[2024-07-01T12:26:00.704+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 155 (char 154)
+[2024-07-01T12:26:00.704+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 145 (char 144)
+[2024-07-01T12:26:00.705+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 141 (char 140)
+[2024-07-01T12:26:00.705+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 144 (char 143)
+[2024-07-01T12:26:00.706+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 144 (char 143)
+[2024-07-01T12:26:00.706+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 148 (char 147)
+[2024-07-01T12:26:00.707+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Extra data: line 1 column 142 (char 141)
+[2024-07-01T12:26:00.707+0000] {logging_mixin.py:188} INFO - {'item_name': 'Wardrobe', 'date_of_purchase': '2023-02-02', 'cost': 500.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-01T12:26:00.707+0000] {logging_mixin.py:188} INFO - Error decoding JSON: Expecting value: line 2 column 1 (char 1)
+[2024-07-01T12:26:00.711+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: connecting to kafka:9092 [('172.18.0.2', 9092) IPv4]
+[2024-07-01T12:26:00.712+0000] {conn.py:1206} INFO - Probing node bootstrap-0 broker version
+[2024-07-01T12:26:00.714+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: Connection complete.
+[2024-07-01T12:26:00.817+0000] {conn.py:1268} INFO - Broker version identified as 2.6.0
+[2024-07-01T12:26:00.818+0000] {conn.py:1269} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-07-01T12:26:00.820+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-01T12:26:00.821+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/script_kafka.py", line 80, in kafka_producer_script
+    send_to_kafka(producer, kafka_topic, dataresult)
+  File "/opt/airflow/dags/script_kafka.py", line 60, in send_to_kafka
+    producer.send(topic, value=data)
+  File "/home/airflow/.local/lib/python3.12/site-packages/kafka/producer/kafka.py", line 576, in send
+    assert not (value is None and key is None), 'Need at least one: key or value'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Need at least one: key or value
+[2024-07-01T12:26:00.833+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=purchase_dag, task_id=kafka_producer, run_id=manual__2024-07-01T12:25:57.427092+00:00, execution_date=20240701T122557, start_date=20240701T122600, end_date=20240701T122600
+[2024-07-01T12:26:00.853+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 482 for task kafka_producer (Need at least one: key or value; 559)
+[2024-07-01T12:26:00.903+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-01T12:26:00.930+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-07-01T12:26:00.939+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

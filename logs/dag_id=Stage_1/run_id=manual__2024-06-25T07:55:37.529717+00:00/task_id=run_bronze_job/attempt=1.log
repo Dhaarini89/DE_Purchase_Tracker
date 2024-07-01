@@ -1,0 +1,162 @@
+[2024-06-25T07:55:42.113+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-25T07:55:42.152+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stage_1.run_bronze_job manual__2024-06-25T07:55:37.529717+00:00 [queued]>
+[2024-06-25T07:55:42.164+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stage_1.run_bronze_job manual__2024-06-25T07:55:37.529717+00:00 [queued]>
+[2024-06-25T07:55:42.164+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-25T07:55:42.179+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): run_bronze_job> on 2024-06-25 07:55:37.529717+00:00
+[2024-06-25T07:55:42.187+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=225) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-25T07:55:42.188+0000] {standard_task_runner.py:63} INFO - Started process 226 to run task
+[2024-06-25T07:55:42.187+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Stage_1', 'run_bronze_job', 'manual__2024-06-25T07:55:37.529717+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/kafka_dag.py', '--cfg-path', '/tmp/tmp_wonuno_']
+[2024-06-25T07:55:42.188+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask run_bronze_job
+[2024-06-25T07:55:42.202+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-25T07:55:42.236+0000] {task_command.py:426} INFO - Running <TaskInstance: Stage_1.run_bronze_job manual__2024-06-25T07:55:37.529717+00:00 [running]> on host ec73b68e126f
+[2024-06-25T07:55:42.325+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stage_1' AIRFLOW_CTX_TASK_ID='run_bronze_job' AIRFLOW_CTX_EXECUTION_DATE='2024-06-25T07:55:37.529717+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-25T07:55:37.529717+00:00'
+[2024-06-25T07:55:42.326+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-25T07:55:42.359+0000] {docker.py:493} INFO - Pulling docker image bitnami/spark:latest
+[2024-06-25T07:55:43.375+0000] {docker.py:507} INFO - latest: Pulling from bitnami/spark
+[2024-06-25T07:55:43.421+0000] {docker.py:507} INFO - 6d10d4f6c38d: Pulling fs layer
+[2024-06-25T07:55:43.872+0000] {docker.py:507} INFO - 6d10d4f6c38d: Downloading
+[2024-06-25T07:57:35.103+0000] {docker.py:507} INFO - 6d10d4f6c38d: Verifying Checksum
+[2024-06-25T07:57:35.104+0000] {docker.py:507} INFO - 6d10d4f6c38d: Download complete
+[2024-06-25T07:57:36.323+0000] {docker.py:507} INFO - 6d10d4f6c38d: Extracting
+[2024-06-25T07:58:00.111+0000] {docker.py:507} INFO - 6d10d4f6c38d: Pull complete
+[2024-06-25T07:58:00.125+0000] {docker.py:502} INFO - Digest: sha256:9e997d4f9fb5ed0ac3942e7438478739f0243921792b0ade4479d11fbfcd6f8a
+[2024-06-25T07:58:00.131+0000] {docker.py:502} INFO - Status: Downloaded newer image for bitnami/spark:latest
+[2024-06-25T07:58:00.134+0000] {docker.py:366} INFO - Starting docker container from image bitnami/spark:latest
+[2024-06-25T07:58:00.137+0000] {docker.py:374} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2024-06-25T07:58:05.442+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m07:58:05.44 [0m[38;5;2mINFO [0m ==>
+[2024-06-25T07:58:05.444+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m07:58:05.44 [0m[38;5;2mINFO [0m ==> [1mWelcome to the Bitnami spark container[0m
+[2024-06-25T07:58:05.446+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m07:58:05.44 [0m[38;5;2mINFO [0m ==> Subscribe to project updates by watching [1mhttps://github.com/bitnami/containers[0m
+[2024-06-25T07:58:05.448+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m07:58:05.44 [0m[38;5;2mINFO [0m ==> Submit issues and feature requests at [1mhttps://github.com/bitnami/containers/issues[0m
+[2024-06-25T07:58:05.450+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m07:58:05.44 [0m[38;5;2mINFO [0m ==> Upgrade to Tanzu Application Catalog for production environments to access custom-configured and pre-packaged software components. Gain enhanced features, including Software Bill of Materials (SBOM), CVE scan result reports, and VEX documents. To learn more, visit [1mhttps://bitnami.com/enterprise[0m
+[2024-06-25T07:58:05.451+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m07:58:05.45 [0m[38;5;2mINFO [0m ==>
+[2024-06-25T07:58:05.459+0000] {docker.py:436} INFO - 
+[2024-06-25T07:58:08.489+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SparkContext: Running Spark version 3.5.1
+[2024-06-25T07:58:08.492+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SparkContext: OS info Linux, 6.5.0-41-generic, amd64
+[2024-06-25T07:58:08.493+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SparkContext: Java version 17.0.11
+[2024-06-25T07:58:08.531+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO ResourceUtils: ==============================================================
+[2024-06-25T07:58:08.532+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-06-25T07:58:08.533+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO ResourceUtils: ==============================================================
+[2024-06-25T07:58:08.534+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SparkContext: Submitted application: PostgreSQL Connection with PySpark
+[2024-06-25T07:58:08.567+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-06-25T07:58:08.580+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO ResourceProfile: Limiting resource is cpu
+[2024-06-25T07:58:08.581+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-06-25T07:58:08.647+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SecurityManager: Changing view acls to: spark
+[2024-06-25T07:58:08.648+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SecurityManager: Changing modify acls to: spark
+[2024-06-25T07:58:08.649+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SecurityManager: Changing view acls groups to:
+[2024-06-25T07:58:08.650+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SecurityManager: Changing modify acls groups to:
+[2024-06-25T07:58:08.651+0000] {docker.py:436} INFO - 24/06/25 07:58:08 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2024-06-25T07:58:08.725+0000] {docker.py:436} INFO - 24/06/25 07:58:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-06-25T07:58:09.134+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO Utils: Successfully started service 'sparkDriver' on port 41607.
+[2024-06-25T07:58:09.171+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO SparkEnv: Registering MapOutputTracker
+[2024-06-25T07:58:09.223+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO SparkEnv: Registering BlockManagerMaster
+[2024-06-25T07:58:09.247+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-06-25T07:58:09.248+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-06-25T07:58:09.255+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-06-25T07:58:09.284+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-656201a3-6a6e-400d-ace2-69fac3b2154a
+[2024-06-25T07:58:09.310+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-06-25T07:58:09.334+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-06-25T07:58:09.515+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-06-25T07:58:09.606+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-06-25T07:58:09.785+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO Executor: Starting executor ID driver on host localhost
+[2024-06-25T07:58:09.786+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO Executor: OS info Linux, 6.5.0-41-generic, amd64
+[2024-06-25T07:58:09.788+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO Executor: Java version 17.0.11
+[2024-06-25T07:58:09.803+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-06-25T07:58:09.805+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@1e5341f for default.
+[2024-06-25T07:58:09.832+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34675.
+[2024-06-25T07:58:09.833+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO NettyBlockTransferService: Server created on localhost:34675
+[2024-06-25T07:58:09.835+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-06-25T07:58:09.841+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 34675, None)
+[2024-06-25T07:58:09.845+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO BlockManagerMasterEndpoint: Registering block manager localhost:34675 with 434.4 MiB RAM, BlockManagerId(driver, localhost, 34675, None)
+[2024-06-25T07:58:09.848+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 34675, None)
+[2024-06-25T07:58:09.850+0000] {docker.py:436} INFO - 24/06/25 07:58:09 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 34675, None)
+[2024-06-25T07:58:10.241+0000] {docker.py:436} INFO - 2024-06-25 07:58:10,240:create_spark_session:INFO:Spark session created successfully
+[2024-06-25T07:58:10.336+0000] {docker.py:436} INFO - 24/06/25 07:58:10 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-06-25T07:58:10.344+0000] {docker.py:436} INFO - 24/06/25 07:58:10 INFO SharedState: Warehouse path is 'file:/opt/bitnami/spark/spark-warehouse'.
+[2024-06-25T07:58:11.804+0000] {docker.py:436} INFO - 2024-06-25 07:58:11,804:create_initial_dataframe:WARNING:Initial dataframe couldn't be created due to exception: Failed to find data source: kafka. Please deploy the application as per the deployment section of Structured Streaming + Kafka Integration Guide.
+Traceback (most recent call last):
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 61, in <module>
+[2024-06-25T07:58:11.805+0000] {docker.py:436} INFO - write_to_postgres()
+[2024-06-25T07:58:11.805+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 57, in write_to_postgres
+    df = create_initial_dataframe(spark)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 42, in create_initial_dataframe
+    .load()
+     ^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/streaming/readwriter.py", line 304, in load
+[2024-06-25T07:58:11.806+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-06-25T07:58:11.806+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+[2024-06-25T07:58:11.807+0000] {docker.py:436} INFO - pyspark.errors.exceptions.captured.AnalysisException
+[2024-06-25T07:58:11.810+0000] {docker.py:436} INFO - : Failed to find data source: kafka. Please deploy the application as per the deployment section of Structured Streaming + Kafka Integration Guide.
+2024-06-25 07:58:11,809:close:INFO:Closing down clientserver connection
+[2024-06-25T07:58:11.865+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-06-25T07:58:11.865+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-06-25T07:58:11.875+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+[2024-06-25T07:58:11.888+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-06-25T07:58:11.900+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO MemoryStore: MemoryStore cleared
+[2024-06-25T07:58:11.901+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO BlockManager: BlockManager stopped
+[2024-06-25T07:58:11.910+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-06-25T07:58:11.914+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-06-25T07:58:11.920+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO SparkContext: Successfully stopped SparkContext
+[2024-06-25T07:58:11.921+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO ShutdownHookManager: Shutdown hook called
+[2024-06-25T07:58:11.922+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-7c983435-2a08-4c47-9cd3-3bfdbf54be9c
+[2024-06-25T07:58:11.926+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-78458681-df00-42f8-a51c-da1853f2a4bd/pyspark-b0bbe1d6-6cde-400f-a10d-af90932cbfd5
+[2024-06-25T07:58:11.929+0000] {docker.py:436} INFO - 24/06/25 07:58:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-78458681-df00-42f8-a51c-da1853f2a4bd
+[2024-06-25T07:58:12.287+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-25T07:58:12.298+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http://docker-proxy:2375/v1.45/containers/create
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 371, in _run_image
+    return self._run_image_with_mounts([*self.mounts, tmp_mount], add_tmp_variable=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 398, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 400 Client Error for http://docker-proxy:2375/v1.45/containers/create: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /tmp/airflowtmpktzbba3a")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 509, in execute
+    return self._run_image()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 380, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 444, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+[2024-06-25T07:58:12.303+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Stage_1, task_id=run_bronze_job, run_id=manual__2024-06-25T07:55:37.529717+00:00, execution_date=20240625T075537, start_date=20240625T075542, end_date=20240625T075812
+[2024-06-25T07:58:12.334+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 13 for task run_bronze_job (Docker container failed: {'StatusCode': 1}; 226)
+[2024-06-25T07:58:12.368+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-25T07:58:12.384+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-25T07:58:12.399+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,19 @@
+[2024-06-27T08:42:34.604+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T08:42:34.695+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stage_1.bronze_table_creation manual__2024-06-27T08:42:26.456284+00:00 [queued]>
+[2024-06-27T08:42:34.744+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stage_1.bronze_table_creation manual__2024-06-27T08:42:26.456284+00:00 [queued]>
+[2024-06-27T08:42:34.744+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-27T08:42:34.809+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): bronze_table_creation> on 2024-06-27 08:42:26.456284+00:00
+[2024-06-27T08:42:34.838+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Stage_1', 'bronze_table_creation', 'manual__2024-06-27T08:42:26.456284+00:00', '--job-id', '305', '--raw', '--subdir', 'DAGS_FOLDER/kafka_dag.py', '--cfg-path', '/tmp/tmpqh9_zjo5']
+[2024-06-27T08:42:34.846+0000] {standard_task_runner.py:91} INFO - Job 305: Subtask bronze_table_creation
+[2024-06-27T08:42:34.876+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1637) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T08:42:34.885+0000] {standard_task_runner.py:63} INFO - Started process 1638 to run task
+[2024-06-27T08:42:34.894+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-27T08:42:34.990+0000] {task_command.py:426} INFO - Running <TaskInstance: Stage_1.bronze_table_creation manual__2024-06-27T08:42:26.456284+00:00 [running]> on host 08bfa8b73cac
+[2024-06-27T08:42:35.219+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stage_1' AIRFLOW_CTX_TASK_ID='bronze_table_creation' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T08:42:26.456284+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T08:42:26.456284+00:00'
+[2024-06-27T08:42:35.220+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T08:42:35.254+0000] {logging_mixin.py:188} INFO - Table 'purchases' created successfully.
+[2024-06-27T08:42:35.258+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-27T08:42:35.259+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T08:42:35.277+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Stage_1, task_id=bronze_table_creation, run_id=manual__2024-06-27T08:42:26.456284+00:00, execution_date=20240627T084226, start_date=20240627T084234, end_date=20240627T084235
+[2024-06-27T08:42:35.308+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-27T08:42:35.330+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

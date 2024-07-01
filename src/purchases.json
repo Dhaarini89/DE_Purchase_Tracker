@@ -1,0 +1,34 @@
+{"item_name": "Laptop", "date_of_purchase": "2023-01-01", "cost": 1200.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Smartphone", "date_of_purchase": "2023-01-02", "cost": 800.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Headphones", "date_of_purchase": "2023-01-03", "cost": 150.00, "quantity": 2, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Tablet", "date_of_purchase": "2023-01-04", "cost": 300.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Office Chair", "date_of_purchase": "2023-01-05", "cost": 200.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Monitor", "date_of_purchase": "2023-01-06", "cost": 250.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Keyboard", "date_of_purchase": "2023-01-07", "cost": 50.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Mouse", "date_of_purchase": "2023-01-08", "cost": 30.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Printer", "date_of_purchase": "2023-01-09", "cost": 120.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Webcam", "date_of_purchase": "2023-01-10", "cost": 80.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Desk Lamp", "date_of_purchase": "2023-01-11", "cost": 40.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "External Hard Drive", "date_of_purchase": "2023-01-12", "cost": 100.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Router", "date_of_purchase": "2023-01-13", "cost": 90.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Smartwatch", "date_of_purchase": "2023-01-14", "cost": 200.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Bluetooth Speaker", "date_of_purchase": "2023-01-15", "cost": 150.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Coffee Maker", "date_of_purchase": "2023-01-16", "cost": 80.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Electric Kettle", "date_of_purchase": "2023-01-17", "cost": 40.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Blender", "date_of_purchase": "2023-01-18", "cost": 60.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Microwave Oven", "date_of_purchase": "2023-01-19", "cost": 150.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Toaster", "date_of_purchase": "2023-01-20", "cost": 30.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Vacuum Cleaner", "date_of_purchase": "2023-01-21", "cost": 250.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Washing Machine", "date_of_purchase": "2023-01-22", "cost": 500.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Refrigerator", "date_of_purchase": "2023-01-23", "cost": 800.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Dishwasher", "date_of_purchase": "2023-01-24", "cost": 600.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Electric Shaver", "date_of_purchase": "2023-01-25", "cost": 70.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Hair Dryer", "date_of_purchase": "2023-01-26", "cost": 50.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Air Conditioner", "date_of_purchase": "2023-01-27", "cost": 1000.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Heater", "date_of_purchase": "2023-01-28", "cost": 120.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Fan", "date_of_purchase": "2023-01-29", "cost": 30.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Table", "date_of_purchase": "2023-01-30", "cost": 200.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Chair", "date_of_purchase": "2023-01-31", "cost": 100.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Bookshelf", "date_of_purchase": "2023-02-01", "cost": 150.00, "quantity": 1, "purchased_by": "Mother", "payment_method": "Cash"}
+{"item_name": "Bed", "date_of_purchase": "2023-02-02", "cost": 500.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}
+{"item_name": "Wardrobe", "date_of_purchase": "2023-02-02", "cost": 500.00, "quantity": 1, "purchased_by": "Father", "payment_method": "Card"}

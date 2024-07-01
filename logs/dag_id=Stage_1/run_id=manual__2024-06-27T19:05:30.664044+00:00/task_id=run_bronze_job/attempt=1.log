@@ -1,0 +1,532 @@
+[2024-06-27T19:05:36.376+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T19:05:36.415+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stage_1.run_bronze_job manual__2024-06-27T19:05:30.664044+00:00 [queued]>
+[2024-06-27T19:05:36.428+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stage_1.run_bronze_job manual__2024-06-27T19:05:30.664044+00:00 [queued]>
+[2024-06-27T19:05:36.428+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-27T19:05:36.446+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): run_bronze_job> on 2024-06-27 19:05:30.664044+00:00
+[2024-06-27T19:05:36.454+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=801) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T19:05:36.455+0000] {standard_task_runner.py:63} INFO - Started process 802 to run task
+[2024-06-27T19:05:36.454+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Stage_1', 'run_bronze_job', 'manual__2024-06-27T19:05:30.664044+00:00', '--job-id', '421', '--raw', '--subdir', 'DAGS_FOLDER/kafka_dag.py', '--cfg-path', '/tmp/tmp2irojljk']
+[2024-06-27T19:05:36.456+0000] {standard_task_runner.py:91} INFO - Job 421: Subtask run_bronze_job
+[2024-06-27T19:05:36.472+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-27T19:05:36.507+0000] {task_command.py:426} INFO - Running <TaskInstance: Stage_1.run_bronze_job manual__2024-06-27T19:05:30.664044+00:00 [running]> on host bafdbafde709
+[2024-06-27T19:05:36.619+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stage_1' AIRFLOW_CTX_TASK_ID='run_bronze_job' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T19:05:30.664044+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T19:05:30.664044+00:00'
+[2024-06-27T19:05:36.620+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T19:05:36.655+0000] {docker.py:366} INFO - Starting docker container from image bitnami/spark:latest
+[2024-06-27T19:05:36.658+0000] {docker.py:374} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2024-06-27T19:05:37.140+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m19:05:37.13 [0m[38;5;2mINFO [0m ==>
+[2024-06-27T19:05:37.142+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m19:05:37.14 [0m[38;5;2mINFO [0m ==> [1mWelcome to the Bitnami spark container[0m
+[2024-06-27T19:05:37.144+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m19:05:37.14 [0m[38;5;2mINFO [0m ==> Subscribe to project updates by watching [1mhttps://github.com/bitnami/containers[0m
+[2024-06-27T19:05:37.146+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m19:05:37.14 [0m[38;5;2mINFO [0m ==> Submit issues and feature requests at [1mhttps://github.com/bitnami/containers/issues[0m
+[2024-06-27T19:05:37.148+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m19:05:37.14 [0m[38;5;2mINFO [0m ==> Upgrade to Tanzu Application Catalog for production environments to access custom-configured and pre-packaged software components. Gain enhanced features, including Software Bill of Materials (SBOM), CVE scan result reports, and VEX documents. To learn more, visit [1mhttps://bitnami.com/enterprise[0m
+[2024-06-27T19:05:37.150+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m19:05:37.14 [0m[38;5;2mINFO [0m ==>
+[2024-06-27T19:05:37.159+0000] {docker.py:436} INFO - 
+[2024-06-27T19:05:39.714+0000] {docker.py:436} INFO - :: loading settings :: url = jar:file:/opt/bitnami/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2024-06-27T19:05:39.817+0000] {docker.py:436} INFO - Ivy Default Cache set to: /opt/bitnami/spark/.ivy2/cache
+[2024-06-27T19:05:39.818+0000] {docker.py:436} INFO - The jars for the packages stored in: /opt/bitnami/spark/.ivy2/jars
+[2024-06-27T19:05:39.831+0000] {docker.py:436} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2024-06-27T19:05:39.832+0000] {docker.py:436} INFO - org.postgresql#postgresql added as a dependency
+[2024-06-27T19:05:39.834+0000] {docker.py:436} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-ce163701-98ed-4bbc-b8b5-2cbd5e5dedf8;1.0
+[2024-06-27T19:05:39.835+0000] {docker.py:436} INFO - confs: [default]
+[2024-06-27T19:05:42.333+0000] {docker.py:436} INFO - found org.apache.spark#spark-sql-kafka-0-10_2.12;3.3.0 in central
+[2024-06-27T19:05:42.746+0000] {docker.py:436} INFO - found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.3.0 in central
+[2024-06-27T19:05:43.060+0000] {docker.py:436} INFO - found org.apache.kafka#kafka-clients;2.8.1 in central
+[2024-06-27T19:05:43.144+0000] {docker.py:436} INFO - found org.lz4#lz4-java;1.8.0 in central
+[2024-06-27T19:05:43.228+0000] {docker.py:436} INFO - found org.xerial.snappy#snappy-java;1.1.8.4 in central
+[2024-06-27T19:05:44.120+0000] {docker.py:436} INFO - found org.slf4j#slf4j-api;1.7.32 in central
+[2024-06-27T19:05:44.532+0000] {docker.py:436} INFO - found org.apache.hadoop#hadoop-client-runtime;3.3.2 in central
+[2024-06-27T19:05:44.633+0000] {docker.py:436} INFO - found org.spark-project.spark#unused;1.0.0 in central
+[2024-06-27T19:05:44.750+0000] {docker.py:436} INFO - found org.apache.hadoop#hadoop-client-api;3.3.2 in central
+[2024-06-27T19:05:45.005+0000] {docker.py:436} INFO - found commons-logging#commons-logging;1.1.3 in central
+[2024-06-27T19:05:45.051+0000] {docker.py:436} INFO - found com.google.code.findbugs#jsr305;3.0.0 in central
+[2024-06-27T19:05:45.990+0000] {docker.py:436} INFO - found org.apache.commons#commons-pool2;2.11.1 in central
+[2024-06-27T19:05:47.766+0000] {docker.py:436} INFO - found org.postgresql#postgresql;42.2.2 in central
+[2024-06-27T19:05:47.789+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.3.0/spark-sql-kafka-0-10_2.12-3.3.0.jar ...
+[2024-06-27T19:05:47.869+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.3.0!spark-sql-kafka-0-10_2.12.jar (91ms)
+[2024-06-27T19:05:47.881+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.2/postgresql-42.2.2.jar ...
+[2024-06-27T19:05:48.018+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.postgresql#postgresql;42.2.2!postgresql.jar(bundle) (148ms)
+[2024-06-27T19:05:48.030+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.3.0/spark-token-provider-kafka-0-10_2.12-3.3.0.jar ...
+[2024-06-27T19:05:48.050+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.3.0!spark-token-provider-kafka-0-10_2.12.jar (30ms)
+[2024-06-27T19:05:48.063+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.8.1/kafka-clients-2.8.1.jar ...
+[2024-06-27T19:05:48.687+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.kafka#kafka-clients;2.8.1!kafka-clients.jar (636ms)
+[2024-06-27T19:05:48.698+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+[2024-06-27T19:05:48.714+0000] {docker.py:436} INFO - [SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (27ms)
+[2024-06-27T19:05:48.727+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar ...
+[2024-06-27T19:05:48.752+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.commons#commons-pool2;2.11.1!commons-pool2.jar (37ms)
+[2024-06-27T19:05:48.765+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar ...
+[2024-06-27T19:05:48.775+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.spark-project.spark#unused;1.0.0!unused.jar (21ms)
+[2024-06-27T19:05:48.786+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.2/hadoop-client-runtime-3.3.2.jar ...
+[2024-06-27T19:05:53.621+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.hadoop#hadoop-client-runtime;3.3.2!hadoop-client-runtime.jar (4844ms)
+[2024-06-27T19:05:53.632+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar ...
+[2024-06-27T19:05:53.746+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.lz4#lz4-java;1.8.0!lz4-java.jar (124ms)
+[2024-06-27T19:05:53.757+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.8.4/snappy-java-1.1.8.4.jar ...
+[2024-06-27T19:05:54.021+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.8.4!snappy-java.jar(bundle) (274ms)
+[2024-06-27T19:05:54.031+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar ...
+[2024-06-27T19:05:54.048+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.slf4j#slf4j-api;1.7.32!slf4j-api.jar (27ms)
+[2024-06-27T19:05:54.060+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.3.2/hadoop-client-api-3.3.2.jar ...
+[2024-06-27T19:05:57.177+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.hadoop#hadoop-client-api;3.3.2!hadoop-client-api.jar (3128ms)
+[2024-06-27T19:05:57.186+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar ...
+[2024-06-27T19:05:57.206+0000] {docker.py:436} INFO - [SUCCESSFUL ] commons-logging#commons-logging;1.1.3!commons-logging.jar (27ms)
+[2024-06-27T19:05:57.206+0000] {docker.py:436} INFO - :: resolution report :: resolve 7943ms :: artifacts dl 9430ms
+[2024-06-27T19:05:57.207+0000] {docker.py:436} INFO - :: modules in use:
+[2024-06-27T19:05:57.209+0000] {docker.py:436} INFO - com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2024-06-27T19:05:57.210+0000] {docker.py:436} INFO - commons-logging#commons-logging;1.1.3 from central in [default]
+[2024-06-27T19:05:57.211+0000] {docker.py:436} INFO - org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2024-06-27T19:05:57.211+0000] {docker.py:436} INFO - org.apache.hadoop#hadoop-client-api;3.3.2 from central in [default]
+	org.apache.hadoop#hadoop-client-runtime;3.3.2 from central in [default]
+	org.apache.kafka#kafka-clients;2.8.1 from central in [default]
+[2024-06-27T19:05:57.211+0000] {docker.py:436} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12;3.3.0 from central in [default]
+[2024-06-27T19:05:57.212+0000] {docker.py:436} INFO - org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.3.0 from central in [default]
+[2024-06-27T19:05:57.212+0000] {docker.py:436} INFO - org.lz4#lz4-java;1.8.0 from central in [default]
+[2024-06-27T19:05:57.214+0000] {docker.py:436} INFO - org.postgresql#postgresql;42.2.2 from central in [default]
+	org.slf4j#slf4j-api;1.7.32 from central in [default]
+[2024-06-27T19:05:57.215+0000] {docker.py:436} INFO - org.spark-project.spark#unused;1.0.0 from central in [default]
+[2024-06-27T19:05:57.216+0000] {docker.py:436} INFO - org.xerial.snappy#snappy-java;1.1.8.4 from central in [default]
+[2024-06-27T19:05:57.218+0000] {docker.py:436} INFO - ---------------------------------------------------------------------
+[2024-06-27T19:05:57.219+0000] {docker.py:436} INFO - |                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   13  |   13  |   13  |   0   ||   13  |   13  |
+	---------------------------------------------------------------------
+[2024-06-27T19:05:57.221+0000] {docker.py:436} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-ce163701-98ed-4bbc-b8b5-2cbd5e5dedf8
+[2024-06-27T19:05:57.222+0000] {docker.py:436} INFO - confs: [default]
+[2024-06-27T19:05:57.307+0000] {docker.py:436} INFO - 13 artifacts copied, 0 already retrieved (57403kB/86ms)
+[2024-06-27T19:05:57.687+0000] {docker.py:436} INFO - 24/06/27 19:05:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-06-27T19:05:59.270+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SparkContext: Running Spark version 3.5.1
+[2024-06-27T19:05:59.278+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SparkContext: OS info Linux, 6.5.0-41-generic, amd64
+24/06/27 19:05:59 INFO SparkContext: Java version 17.0.11
+[2024-06-27T19:05:59.316+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO ResourceUtils: ==============================================================
+[2024-06-27T19:05:59.317+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-06-27T19:05:59.318+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO ResourceUtils: ==============================================================
+[2024-06-27T19:05:59.319+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SparkContext: Submitted application: PostgreSQL Connection with PySpark
+[2024-06-27T19:05:59.354+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-06-27T19:05:59.365+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO ResourceProfile: Limiting resource is cpu
+[2024-06-27T19:05:59.366+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-06-27T19:05:59.458+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SecurityManager: Changing view acls to: spark
+[2024-06-27T19:05:59.459+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SecurityManager: Changing modify acls to: spark
+[2024-06-27T19:05:59.459+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SecurityManager: Changing view acls groups to:
+[2024-06-27T19:05:59.461+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SecurityManager: Changing modify acls groups to:
+[2024-06-27T19:05:59.463+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2024-06-27T19:05:59.889+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO Utils: Successfully started service 'sparkDriver' on port 41429.
+[2024-06-27T19:05:59.934+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SparkEnv: Registering MapOutputTracker
+[2024-06-27T19:05:59.996+0000] {docker.py:436} INFO - 24/06/27 19:05:59 INFO SparkEnv: Registering BlockManagerMaster
+[2024-06-27T19:06:00.020+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-06-27T19:06:00.021+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-06-27T19:06:00.027+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-06-27T19:06:00.051+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e6bef078-7a64-43ff-89d6-3e42625349d8
+[2024-06-27T19:06:00.068+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-06-27T19:06:00.094+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-06-27T19:06:00.248+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-06-27T19:06:00.333+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-06-27T19:06:00.397+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar at spark://localhost:41429/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar at spark://localhost:41429/jars/org.postgresql_postgresql-42.2.2.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar at spark://localhost:41429/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar at spark://localhost:41429/jars/org.apache.kafka_kafka-clients-2.8.1.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at spark://localhost:41429/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.398+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at spark://localhost:41429/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at spark://localhost:41429/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar at spark://localhost:41429/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at spark://localhost:41429/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.400+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar at spark://localhost:41429/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.401+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar at spark://localhost:41429/jars/org.slf4j_slf4j-api-1.7.32.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar at spark://localhost:41429/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://localhost:41429/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.405+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.410+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T19:06:00.421+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.422+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.postgresql_postgresql-42.2.2.jar
+[2024-06-27T19:06:00.430+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T19:06:00.435+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.436+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.kafka_kafka-clients-2.8.1.jar
+[2024-06-27T19:06:00.448+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.450+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-27T19:06:00.459+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-27T19:06:00.466+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.468+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.spark-project.spark_unused-1.0.0.jar
+[2024-06-27T19:06:00.476+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar
+[2024-06-27T19:06:00.517+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.518+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.lz4_lz4-java-1.8.0.jar
+[2024-06-27T19:06:00.524+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar at file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar with timestamp 1719515159256
+24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.xerial.snappy_snappy-java-1.1.8.4.jar
+[2024-06-27T19:06:00.534+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar at file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.534+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.slf4j_slf4j-api-1.7.32.jar
+[2024-06-27T19:06:00.542+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.543+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.hadoop_hadoop-client-api-3.3.2.jar
+[2024-06-27T19:06:00.581+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.582+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/commons-logging_commons-logging-1.1.3.jar
+[2024-06-27T19:06:00.669+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Starting executor ID driver on host localhost
+[2024-06-27T19:06:00.670+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: OS info Linux, 6.5.0-41-generic, amd64
+[2024-06-27T19:06:00.670+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Java version 17.0.11
+[2024-06-27T19:06:00.679+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-06-27T19:06:00.681+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@79c6809b for default.
+[2024-06-27T19:06:00.711+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.746+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.postgresql_postgresql-42.2.2.jar
+[2024-06-27T19:06:00.752+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.776+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.hadoop_hadoop-client-api-3.3.2.jar
+[2024-06-27T19:06:00.781+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.784+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.xerial.snappy_snappy-java-1.1.8.4.jar
+[2024-06-27T19:06:00.787+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.818+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar
+[2024-06-27T19:06:00.822+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.823+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-27T19:06:00.827+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.828+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T19:06:00.832+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.834+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.slf4j_slf4j-api-1.7.32.jar
+[2024-06-27T19:06:00.838+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.839+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T19:06:00.844+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.844+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-27T19:06:00.850+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.852+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.lz4_lz4-java-1.8.0.jar
+[2024-06-27T19:06:00.857+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.859+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/commons-logging_commons-logging-1.1.3.jar
+[2024-06-27T19:06:00.862+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.863+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.spark-project.spark_unused-1.0.0.jar
+[2024-06-27T19:06:00.866+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.871+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.kafka_kafka-clients-2.8.1.jar
+[2024-06-27T19:06:00.879+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Executor: Fetching spark://localhost:41429/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar with timestamp 1719515159256
+[2024-06-27T19:06:00.930+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO TransportClientFactory: Successfully created connection to localhost/127.0.0.1:41429 after 36 ms (0 ms spent in bootstraps)
+[2024-06-27T19:06:00.937+0000] {docker.py:436} INFO - 24/06/27 19:06:00 INFO Utils: Fetching spark://localhost:41429/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp1600430048656086726.tmp
+[2024-06-27T19:06:01.131+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp1600430048656086726.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.hadoop_hadoop-client-api-3.3.2.jar
+[2024-06-27T19:06:01.138+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.hadoop_hadoop-client-api-3.3.2.jar to class loader default
+[2024-06-27T19:06:01.139+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.140+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp8743137481031845735.tmp
+[2024-06-27T19:06:01.144+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp8743137481031845735.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.lz4_lz4-java-1.8.0.jar
+[2024-06-27T19:06:01.148+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.lz4_lz4-java-1.8.0.jar to class loader default
+[2024-06-27T19:06:01.148+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.149+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp7148958567900245456.tmp
+[2024-06-27T19:06:01.157+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp7148958567900245456.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.xerial.snappy_snappy-java-1.1.8.4.jar
+[2024-06-27T19:06:01.162+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.xerial.snappy_snappy-java-1.1.8.4.jar to class loader default
+[2024-06-27T19:06:01.163+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.165+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp2909640902251348626.tmp
+[2024-06-27T19:06:01.167+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp2909640902251348626.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.spark-project.spark_unused-1.0.0.jar
+[2024-06-27T19:06:01.171+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.spark-project.spark_unused-1.0.0.jar to class loader default
+[2024-06-27T19:06:01.172+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.172+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp7876361085516266140.tmp
+[2024-06-27T19:06:01.176+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp7876361085516266140.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-27T19:06:01.180+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.commons_commons-pool2-2.11.1.jar to class loader default
+[2024-06-27T19:06:01.181+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.182+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp15499590690078765002.tmp
+[2024-06-27T19:06:01.185+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp15499590690078765002.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T19:06:01.189+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar to class loader default
+[2024-06-27T19:06:01.191+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.192+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp11209836295446436181.tmp
+[2024-06-27T19:06:01.192+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp11209836295446436181.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-27T19:06:01.197+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/com.google.code.findbugs_jsr305-3.0.0.jar to class loader default
+[2024-06-27T19:06:01.198+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.199+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp12554912237167215276.tmp
+[2024-06-27T19:06:01.201+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp12554912237167215276.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T19:06:01.204+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar to class loader default
+[2024-06-27T19:06:01.205+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.apache.kafka_kafka-clients-2.8.1.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.206+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.apache.kafka_kafka-clients-2.8.1.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp17679656702937495760.tmp
+[2024-06-27T19:06:01.225+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp17679656702937495760.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.kafka_kafka-clients-2.8.1.jar
+[2024-06-27T19:06:01.234+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.kafka_kafka-clients-2.8.1.jar to class loader default
+[2024-06-27T19:06:01.235+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.235+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp17683333552062065117.tmp
+[2024-06-27T19:06:01.236+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp17683333552062065117.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/commons-logging_commons-logging-1.1.3.jar
+[2024-06-27T19:06:01.240+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/commons-logging_commons-logging-1.1.3.jar to class loader default
+[2024-06-27T19:06:01.241+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.postgresql_postgresql-42.2.2.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.242+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.postgresql_postgresql-42.2.2.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp10088658479099034665.tmp
+[2024-06-27T19:06:01.247+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp10088658479099034665.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.postgresql_postgresql-42.2.2.jar
+[2024-06-27T19:06:01.251+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.postgresql_postgresql-42.2.2.jar to class loader default
+[2024-06-27T19:06:01.252+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.253+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp851525986477948515.tmp
+[2024-06-27T19:06:01.420+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp851525986477948515.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar
+[2024-06-27T19:06:01.429+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar to class loader default
+[2024-06-27T19:06:01.430+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Fetching spark://localhost:41429/jars/org.slf4j_slf4j-api-1.7.32.jar with timestamp 1719515159256
+[2024-06-27T19:06:01.430+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Fetching spark://localhost:41429/jars/org.slf4j_slf4j-api-1.7.32.jar to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp17611049579203751505.tmp
+[2024-06-27T19:06:01.432+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/fetchFileTemp17611049579203751505.tmp has been previously copied to /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.slf4j_slf4j-api-1.7.32.jar
+[2024-06-27T19:06:01.436+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Executor: Adding file:/tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/userFiles-598e145f-db87-4ec3-864d-a5f19767e3c3/org.slf4j_slf4j-api-1.7.32.jar to class loader default
+[2024-06-27T19:06:01.446+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42215.
+[2024-06-27T19:06:01.447+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO NettyBlockTransferService: Server created on localhost:42215
+[2024-06-27T19:06:01.448+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-06-27T19:06:01.455+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 42215, None)
+[2024-06-27T19:06:01.460+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO BlockManagerMasterEndpoint: Registering block manager localhost:42215 with 434.4 MiB RAM, BlockManagerId(driver, localhost, 42215, None)
+[2024-06-27T19:06:01.463+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 42215, None)
+[2024-06-27T19:06:01.464+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 42215, None)
+[2024-06-27T19:06:01.959+0000] {docker.py:436} INFO - 2024-06-27 19:06:01,958:create_spark_session:INFO:Spark session created successfully
+[2024-06-27T19:06:01.967+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-06-27T19:06:01.970+0000] {docker.py:436} INFO - 24/06/27 19:06:01 INFO SharedState: Warehouse path is 'file:/opt/bitnami/spark/spark-warehouse'.
+[2024-06-27T19:06:03.958+0000] {docker.py:436} INFO - 2024-06-27 19:06:03,957:create_initial_dataframe:INFO:Initial dataframe created successfully:
+[2024-06-27T19:06:04.623+0000] {docker.py:436} INFO - 2024-06-27 19:06:04,623:start_streaming:INFO:Start streaming ...
+[2024-06-27T19:06:04.912+0000] {docker.py:436} INFO - 2024-06-27 19:06:04,911:run:INFO:Callback Server Starting
+[2024-06-27T19:06:04.913+0000] {docker.py:436} INFO - 2024-06-27 19:06:04,912:run:INFO:Socket listening on ('127.0.0.1', 38599)
+[2024-06-27T19:06:04.935+0000] {docker.py:436} INFO - 24/06/27 19:06:04 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+[2024-06-27T19:06:04.967+0000] {docker.py:436} INFO - 24/06/27 19:06:04 WARN ResolveWriteToStream: Temporary checkpoint location created which is deleted normally when the query didn't fail: /tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+[2024-06-27T19:06:04.992+0000] {docker.py:436} INFO - 24/06/27 19:06:04 INFO ResolveWriteToStream: Checkpoint root file:///tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332 resolved to file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332.
+[2024-06-27T19:06:04.993+0000] {docker.py:436} INFO - 24/06/27 19:06:04 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2024-06-27T19:06:05.085+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO CheckpointFileManager: Writing atomically to file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/metadata using temp file file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/.metadata.f01fc817-6dd7-4ae8-8013-981fc138a10c.tmp
+[2024-06-27T19:06:05.204+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO CheckpointFileManager: Renamed temp file file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/.metadata.f01fc817-6dd7-4ae8-8013-981fc138a10c.tmp to file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/metadata
+[2024-06-27T19:06:05.253+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO MicroBatchExecution: Starting [id = 52eef5ca-1599-465e-b3e3-a5212700e021, runId = c82fe32e-29d6-4a74-8803-9519ad542bd9]. Use file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332 to store the query checkpoint.
+[2024-06-27T19:06:05.265+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO MicroBatchExecution: Reading table [org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable@94549a5] from DataSourceV2 named 'kafka' [org.apache.spark.sql.kafka010.KafkaSourceProvider@5baa4394]
+[2024-06-27T19:06:05.301+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-06-27T19:06:05.304+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-06-27T19:06:05.305+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO MicroBatchExecution: Starting new streaming query.
+[2024-06-27T19:06:05.309+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO MicroBatchExecution: Stream started from {}
+[2024-06-27T19:06:05.710+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO AdminClientConfig: AdminClientConfig values: 
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+[2024-06-27T19:06:05.814+0000] {docker.py:436} INFO - 24/06/27 19:06:05 WARN AdminClientConfig: The configuration 'key.deserializer' was supplied but isn't a known config.
+[2024-06-27T19:06:05.815+0000] {docker.py:436} INFO - 24/06/27 19:06:05 WARN AdminClientConfig: The configuration 'value.deserializer' was supplied but isn't a known config.
+24/06/27 19:06:05 WARN AdminClientConfig: The configuration 'enable.auto.commit' was supplied but isn't a known config.
+24/06/27 19:06:05 WARN AdminClientConfig: The configuration 'max.poll.records' was supplied but isn't a known config.
+24/06/27 19:06:05 WARN AdminClientConfig: The configuration 'auto.offset.reset' was supplied but isn't a known config.
+[2024-06-27T19:06:05.817+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO AppInfoParser: Kafka version: 2.8.1
+[2024-06-27T19:06:05.818+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO AppInfoParser: Kafka commitId: 839b886f9b732b15
+[2024-06-27T19:06:05.822+0000] {docker.py:436} INFO - 24/06/27 19:06:05 INFO AppInfoParser: Kafka startTimeMs: 1719515165814
+[2024-06-27T19:06:06.300+0000] {docker.py:436} INFO - 24/06/27 19:06:06 INFO CheckpointFileManager: Writing atomically to file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/sources/0/0 using temp file file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/sources/0/.0.8f1dea43-d706-4333-b090-990e03f42843.tmp
+[2024-06-27T19:06:06.336+0000] {docker.py:436} INFO - 24/06/27 19:06:06 INFO CheckpointFileManager: Renamed temp file file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/sources/0/.0.8f1dea43-d706-4333-b090-990e03f42843.tmp to file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/sources/0/0
+[2024-06-27T19:06:06.340+0000] {docker.py:436} INFO - 24/06/27 19:06:06 INFO KafkaMicroBatchStream: Initial offsets: {"store_source_data":{"0":84}}
+[2024-06-27T19:06:06.380+0000] {docker.py:436} INFO - 24/06/27 19:06:06 INFO CheckpointFileManager: Writing atomically to file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/offsets/0 using temp file file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/offsets/.0.a97c67ae-c18b-4b06-beab-0ea26ee85957.tmp
+[2024-06-27T19:06:06.453+0000] {docker.py:436} INFO - 24/06/27 19:06:06 INFO CheckpointFileManager: Renamed temp file file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/offsets/.0.a97c67ae-c18b-4b06-beab-0ea26ee85957.tmp to file:/tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332/offsets/0
+[2024-06-27T19:06:06.462+0000] {docker.py:436} INFO - 24/06/27 19:06:06 INFO MicroBatchExecution: Committed offsets for batch 0. Metadata OffsetSeqMetadata(0,1719515166363,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.join.stateFormatVersion -> 2, spark.sql.streaming.stateStore.compression.codec -> lz4, spark.sql.streaming.stateStore.rocksdb.formatVersion -> 5, spark.sql.streaming.statefulOperator.useStrictDistribution -> true, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+[2024-06-27T19:06:07.146+0000] {docker.py:436} INFO - 24/06/27 19:06:07 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-27T19:06:07.233+0000] {docker.py:436} INFO - 24/06/27 19:06:07 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-27T19:06:07.346+0000] {docker.py:436} INFO - 24/06/27 19:06:07 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-27T19:06:07.349+0000] {docker.py:436} INFO - 24/06/27 19:06:07 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-27T19:06:07.849+0000] {docker.py:436} INFO - 24/06/27 19:06:07 INFO CodeGenerator: Code generated in 288.403215 ms
+[2024-06-27T19:06:07.980+0000] {docker.py:436} INFO - 2024-06-27 19:06:07,979:wait_for_commands:INFO:Python Server ready to receive messages
+[2024-06-27T19:06:07.981+0000] {docker.py:436} INFO - 2024-06-27 19:06:07,980:wait_for_commands:INFO:Received command c on object id p0
+[2024-06-27T19:06:08.036+0000] {docker.py:436} INFO - 2024-06-27 19:06:08,014:_call_proxy:ERROR:There was an exception while executing the Python Proxy on the Python Side.
+Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 617, in _call_proxy
+    return_value = getattr(self.pool[obj_id], method)(*params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 120, in call
+    raise e
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in call
+    self.func(DataFrame(jdf, wrapped_session_jdf), batch_id)
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 116, in <lambda>
+    existing_data_df, batch_df[unique_column] == existing_data_df[unique_column], "leftanti"
+                                                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/dataframe.py", line 3078, in __getitem__
+    jc = self._jdf.apply(item)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `item_name` cannot be resolved. Did you mean one of the following? [`id`, `item_purchased`, `date_of_purchase`, `cost`, `quantity`, `purchased_by`, `payment_method`].
+[2024-06-27T19:06:08.056+0000] {docker.py:436} INFO - 24/06/27 19:06:08 ERROR MicroBatchExecution: Query [id = 52eef5ca-1599-465e-b3e3-a5212700e021, runId = c82fe32e-29d6-4a74-8803-9519ad542bd9] terminated with error
+py4j.Py4JException: An exception was raised by the Python Proxy. Return Message: Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 617, in _call_proxy
+    return_value = getattr(self.pool[obj_id], method)(*params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 120, in call
+    raise e
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in call
+    self.func(DataFrame(jdf, wrapped_session_jdf), batch_id)
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 116, in <lambda>
+    existing_data_df, batch_df[unique_column] == existing_data_df[unique_column], "leftanti"
+                                                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/dataframe.py", line 3078, in __getitem__
+    jc = self._jdf.apply(item)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `item_name` cannot be resolved. Did you mean one of the following? [`id`, `item_purchased`, `date_of_purchase`, `cost`, `quantity`, `purchased_by`, `payment_method`].
+
+	at py4j.Protocol.getReturnValue(Protocol.java:476)
+	at py4j.reflection.PythonProxyHandler.invoke(PythonProxyHandler.java:108)
+	at jdk.proxy3/jdk.proxy3.$Proxy30.call(Unknown Source)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1$adapted(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.SingleBatchExecutor.execute(TriggerExecutor.scala:39)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+[2024-06-27T19:06:08.059+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO AppInfoParser: App info kafka.admin.client for adminclient-1 unregistered
+[2024-06-27T19:06:08.076+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO Metrics: Metrics scheduler closed
+24/06/27 19:06:08 INFO Metrics: Closing reporter org.apache.kafka.common.metrics.JmxReporter
+24/06/27 19:06:08 INFO Metrics: Metrics reporters closed
+[2024-06-27T19:06:08.077+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO MicroBatchExecution: Async log purge executor pool for query [id = 52eef5ca-1599-465e-b3e3-a5212700e021, runId = c82fe32e-29d6-4a74-8803-9519ad542bd9] has been shutdown
+[2024-06-27T19:06:08.175+0000] {docker.py:436} INFO - Traceback (most recent call last):
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 138, in <module>
+[2024-06-27T19:06:08.176+0000] {docker.py:436} INFO - write_to_postgres()
+[2024-06-27T19:06:08.176+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 134, in write_to_postgres
+[2024-06-27T19:06:08.177+0000] {docker.py:436} INFO - 
+[2024-06-27T19:06:08.177+0000] {docker.py:436} INFO - start_streaming(final_df,spark)
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 125, in start_streaming
+    return query.awaitTermination()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/streaming/query.py", line 221, in awaitTermination
+[2024-06-27T19:06:08.178+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-06-27T19:06:08.178+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+pyspark.errors.exceptions.captured.StreamingQueryException
+[2024-06-27T19:06:08.182+0000] {docker.py:436} INFO - : [STREAM_FAILED] Query [id = 52eef5ca-1599-465e-b3e3-a5212700e021, runId = c82fe32e-29d6-4a74-8803-9519ad542bd9] terminated with exception: An exception was raised by the Python Proxy. Return Message: Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 617, in _call_proxy
+    return_value = getattr(self.pool[obj_id], method)(*params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 120, in call
+    raise e
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in call
+    self.func(DataFrame(jdf, wrapped_session_jdf), batch_id)
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 116, in <lambda>
+    existing_data_df, batch_df[unique_column] == existing_data_df[unique_column], "leftanti"
+                                                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/dataframe.py", line 3078, in __getitem__
+    jc = self._jdf.apply(item)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `item_name` cannot be resolved. Did you mean one of the following? [`id`, `item_purchased`, `date_of_purchase`, `cost`, `quantity`, `purchased_by`, `payment_method`].
+[2024-06-27T19:06:08.183+0000] {docker.py:436} INFO - 2024-06-27 19:06:08,182:close:INFO:Closing down clientserver connection
+[2024-06-27T19:06:08.240+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-06-27T19:06:08.241+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-06-27T19:06:08.254+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+[2024-06-27T19:06:08.269+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-06-27T19:06:08.283+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO MemoryStore: MemoryStore cleared
+[2024-06-27T19:06:08.283+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO BlockManager: BlockManager stopped
+[2024-06-27T19:06:08.291+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-06-27T19:06:08.295+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-06-27T19:06:08.315+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO SparkContext: Successfully stopped SparkContext
+[2024-06-27T19:06:08.316+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO ShutdownHookManager: Shutdown hook called
+[2024-06-27T19:06:08.317+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO ShutdownHookManager: Deleting directory /tmp/temporary-077fb21a-7f95-4398-b0e6-d046b12cb332
+[2024-06-27T19:06:08.323+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da
+[2024-06-27T19:06:08.328+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-986adb58-76a6-429d-8aeb-e0c3141acc45
+[2024-06-27T19:06:08.333+0000] {docker.py:436} INFO - 24/06/27 19:06:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-3f9466dc-c4d2-4aab-94c2-be8307ace8da/pyspark-4fdb6d8d-bda4-487b-8420-d8f31e838921
+[2024-06-27T19:06:08.646+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T19:06:08.658+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http://docker-proxy:2375/v1.45/containers/create
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 371, in _run_image
+    return self._run_image_with_mounts([*self.mounts, tmp_mount], add_tmp_variable=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 398, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 400 Client Error for http://docker-proxy:2375/v1.45/containers/create: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /tmp/airflowtmpnou36y2z")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 509, in execute
+    return self._run_image()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 380, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 444, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+[2024-06-27T19:06:08.665+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Stage_1, task_id=run_bronze_job, run_id=manual__2024-06-27T19:05:30.664044+00:00, execution_date=20240627T190530, start_date=20240627T190536, end_date=20240627T190608
+[2024-06-27T19:06:08.681+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 421 for task run_bronze_job (Docker container failed: {'StatusCode': 1}; 802)
+[2024-06-27T19:06:08.711+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-27T19:06:08.738+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-27T19:06:08.742+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

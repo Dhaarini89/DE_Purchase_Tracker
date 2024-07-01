@@ -1,0 +1,1 @@
+[2024-07-01T12:08:12.381+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: purchase_dag.run_pyspark_job manual__2024-07-01T12:08:11.209438+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

@@ -1,0 +1,42 @@
+[2024-07-01T12:07:16.877+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-01T12:07:16.938+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: purchase_dag.kafka_topic_creation manual__2024-07-01T12:07:15.396315+00:00 [queued]>
+[2024-07-01T12:07:16.954+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: purchase_dag.kafka_topic_creation manual__2024-07-01T12:07:15.396315+00:00 [queued]>
+[2024-07-01T12:07:16.954+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-07-01T12:07:16.977+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): kafka_topic_creation> on 2024-07-01 12:07:15.396315+00:00
+[2024-07-01T12:07:16.989+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=334) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-01T12:07:16.990+0000] {standard_task_runner.py:63} INFO - Started process 335 to run task
+[2024-07-01T12:07:16.988+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'purchase_dag', 'kafka_topic_creation', 'manual__2024-07-01T12:07:15.396315+00:00', '--job-id', '464', '--raw', '--subdir', 'DAGS_FOLDER/purchase_dag.py', '--cfg-path', '/tmp/tmpb1_mluvc']
+[2024-07-01T12:07:16.991+0000] {standard_task_runner.py:91} INFO - Job 464: Subtask kafka_topic_creation
+[2024-07-01T12:07:17.008+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-01T12:07:17.055+0000] {task_command.py:426} INFO - Running <TaskInstance: purchase_dag.kafka_topic_creation manual__2024-07-01T12:07:15.396315+00:00 [running]> on host 6d5f7889ee5a
+[2024-07-01T12:07:17.179+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='purchase_dag' AIRFLOW_CTX_TASK_ID='kafka_topic_creation' AIRFLOW_CTX_EXECUTION_DATE='2024-07-01T12:07:15.396315+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-01T12:07:15.396315+00:00'
+[2024-07-01T12:07:17.180+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-01T12:07:17.203+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-01T12:07:17.203+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/script_kafka.py", line 12, in kafka_topic_creation
+    create_kafka_topic(broker, topic_name, num_partitions, replication_factor)
+  File "/opt/airflow/dags/script_kafka.py", line 17, in create_kafka_topic
+    admin_client = KafkaAdminClient({
+                   ^^^^^^^^^^^^^^^^^^
+TypeError: KafkaAdminClient.__init__() takes 1 positional argument but 2 were given
+[2024-07-01T12:07:17.216+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=purchase_dag, task_id=kafka_topic_creation, run_id=manual__2024-07-01T12:07:15.396315+00:00, execution_date=20240701T120715, start_date=20240701T120716, end_date=20240701T120717
+[2024-07-01T12:07:17.236+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 464 for task kafka_topic_creation (KafkaAdminClient.__init__() takes 1 positional argument but 2 were given; 335)
+[2024-07-01T12:07:17.286+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-01T12:07:17.328+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-07-01T12:07:17.342+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

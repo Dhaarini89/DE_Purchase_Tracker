@@ -1,0 +1,54 @@
+[2024-06-26T19:29:04.651+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-26T19:29:04.691+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stage_1.kafka_producer manual__2024-06-26T19:29:02.351428+00:00 [queued]>
+[2024-06-26T19:29:04.702+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stage_1.kafka_producer manual__2024-06-26T19:29:02.351428+00:00 [queued]>
+[2024-06-26T19:29:04.702+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-26T19:29:04.721+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): kafka_producer> on 2024-06-26 19:29:02.351428+00:00
+[2024-06-26T19:29:04.729+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=364) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-26T19:29:04.731+0000] {standard_task_runner.py:63} INFO - Started process 365 to run task
+[2024-06-26T19:29:04.730+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Stage_1', 'kafka_producer', 'manual__2024-06-26T19:29:02.351428+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/kafka_dag.py', '--cfg-path', '/tmp/tmpnx087qti']
+[2024-06-26T19:29:04.731+0000] {standard_task_runner.py:91} INFO - Job 53: Subtask kafka_producer
+[2024-06-26T19:29:04.748+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-26T19:29:04.787+0000] {task_command.py:426} INFO - Running <TaskInstance: Stage_1.kafka_producer manual__2024-06-26T19:29:02.351428+00:00 [running]> on host ba36c0353089
+[2024-06-26T19:29:04.884+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stage_1' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2024-06-26T19:29:02.351428+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-26T19:29:02.351428+00:00'
+[2024-06-26T19:29:04.885+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-26T19:29:04.899+0000] {logging_mixin.py:188} INFO - Files and directories in '/opt/***/':
+[2024-06-26T19:29:04.899+0000] {logging_mixin.py:188} INFO - logs
+[2024-06-26T19:29:04.899+0000] {logging_mixin.py:188} INFO - dags
+[2024-06-26T19:29:04.899+0000] {logging_mixin.py:188} INFO - ***.cfg
+[2024-06-26T19:29:04.900+0000] {logging_mixin.py:188} INFO - src
+[2024-06-26T19:29:04.900+0000] {logging_mixin.py:188} INFO - plugins
+[2024-06-26T19:29:04.900+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-26T19:29:04.900+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/kafka_scripts.py", line 24, in kafka_producer_script
+    json_data = json.load(file)
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 8 column 10 (char 236)
+[2024-06-26T19:29:04.910+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Stage_1, task_id=kafka_producer, run_id=manual__2024-06-26T19:29:02.351428+00:00, execution_date=20240626T192902, start_date=20240626T192904, end_date=20240626T192904
+[2024-06-26T19:29:04.922+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 53 for task kafka_producer (Extra data: line 8 column 10 (char 236); 365)
+[2024-06-26T19:29:04.944+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-26T19:29:04.968+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-26T19:29:04.973+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

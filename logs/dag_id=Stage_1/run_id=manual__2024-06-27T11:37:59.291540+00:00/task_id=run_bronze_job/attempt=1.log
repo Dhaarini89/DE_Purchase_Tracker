@@ -1,0 +1,1784 @@
+[2024-06-27T11:38:06.689+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T11:38:06.729+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stage_1.run_bronze_job manual__2024-06-27T11:37:59.291540+00:00 [queued]>
+[2024-06-27T11:38:06.741+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stage_1.run_bronze_job manual__2024-06-27T11:37:59.291540+00:00 [queued]>
+[2024-06-27T11:38:06.742+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-27T11:38:06.757+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): run_bronze_job> on 2024-06-27 11:37:59.291540+00:00
+[2024-06-27T11:38:06.764+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=789) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T11:38:06.765+0000] {standard_task_runner.py:63} INFO - Started process 790 to run task
+[2024-06-27T11:38:06.764+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Stage_1', 'run_bronze_job', 'manual__2024-06-27T11:37:59.291540+00:00', '--job-id', '388', '--raw', '--subdir', 'DAGS_FOLDER/kafka_dag.py', '--cfg-path', '/tmp/tmp_5qzx_qh']
+[2024-06-27T11:38:06.766+0000] {standard_task_runner.py:91} INFO - Job 388: Subtask run_bronze_job
+[2024-06-27T11:38:06.781+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-27T11:38:06.820+0000] {task_command.py:426} INFO - Running <TaskInstance: Stage_1.run_bronze_job manual__2024-06-27T11:37:59.291540+00:00 [running]> on host 3d646c49e37a
+[2024-06-27T11:38:06.967+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stage_1' AIRFLOW_CTX_TASK_ID='run_bronze_job' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T11:37:59.291540+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T11:37:59.291540+00:00'
+[2024-06-27T11:38:06.968+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T11:38:07.026+0000] {docker.py:366} INFO - Starting docker container from image bitnami/spark:latest
+[2024-06-27T11:38:07.030+0000] {docker.py:374} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2024-06-27T11:38:07.541+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m11:38:07.53 [0m[38;5;2mINFO [0m ==>
+[2024-06-27T11:38:07.544+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m11:38:07.54 [0m[38;5;2mINFO [0m ==> [1mWelcome to the Bitnami spark container[0m
+[2024-06-27T11:38:07.545+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m11:38:07.54 [0m[38;5;2mINFO [0m ==> Subscribe to project updates by watching [1mhttps://github.com/bitnami/containers[0m
+[2024-06-27T11:38:07.547+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m11:38:07.54 [0m[38;5;2mINFO [0m ==> Submit issues and feature requests at [1mhttps://github.com/bitnami/containers/issues[0m
+[2024-06-27T11:38:07.549+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m11:38:07.54 [0m[38;5;2mINFO [0m ==> Upgrade to Tanzu Application Catalog for production environments to access custom-configured and pre-packaged software components. Gain enhanced features, including Software Bill of Materials (SBOM), CVE scan result reports, and VEX documents. To learn more, visit [1mhttps://bitnami.com/enterprise[0m
+[2024-06-27T11:38:07.551+0000] {docker.py:436} INFO - [38;5;6mspark [38;5;5m11:38:07.55 [0m[38;5;2mINFO [0m ==>
+[2024-06-27T11:38:07.561+0000] {docker.py:436} INFO - 
+[2024-06-27T11:38:10.092+0000] {docker.py:436} INFO - :: loading settings :: url = jar:file:/opt/bitnami/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2024-06-27T11:38:10.217+0000] {docker.py:436} INFO - Ivy Default Cache set to: /opt/bitnami/spark/.ivy2/cache
+The jars for the packages stored in: /opt/bitnami/spark/.ivy2/jars
+[2024-06-27T11:38:10.231+0000] {docker.py:436} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+org.postgresql#postgresql added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-d432d79b-8e43-413b-8138-744ac8fddb79;1.0
+	confs: [default]
+[2024-06-27T11:38:12.086+0000] {docker.py:436} INFO - found org.apache.spark#spark-sql-kafka-0-10_2.12;3.3.0 in central
+[2024-06-27T11:38:12.430+0000] {docker.py:436} INFO - found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.3.0 in central
+[2024-06-27T11:38:12.502+0000] {docker.py:436} INFO - found org.apache.kafka#kafka-clients;2.8.1 in central
+[2024-06-27T11:38:12.566+0000] {docker.py:436} INFO - found org.lz4#lz4-java;1.8.0 in central
+[2024-06-27T11:38:12.639+0000] {docker.py:436} INFO - found org.xerial.snappy#snappy-java;1.1.8.4 in central
+[2024-06-27T11:38:13.461+0000] {docker.py:436} INFO - found org.slf4j#slf4j-api;1.7.32 in central
+[2024-06-27T11:38:13.828+0000] {docker.py:436} INFO - found org.apache.hadoop#hadoop-client-runtime;3.3.2 in central
+[2024-06-27T11:38:13.972+0000] {docker.py:436} INFO - found org.spark-project.spark#unused;1.0.0 in central
+[2024-06-27T11:38:14.104+0000] {docker.py:436} INFO - found org.apache.hadoop#hadoop-client-api;3.3.2 in central
+[2024-06-27T11:38:14.375+0000] {docker.py:436} INFO - found commons-logging#commons-logging;1.1.3 in central
+[2024-06-27T11:38:14.452+0000] {docker.py:436} INFO - found com.google.code.findbugs#jsr305;3.0.0 in central
+[2024-06-27T11:38:15.359+0000] {docker.py:436} INFO - found org.apache.commons#commons-pool2;2.11.1 in central
+[2024-06-27T11:38:17.168+0000] {docker.py:436} INFO - found org.postgresql#postgresql;42.2.2 in central
+[2024-06-27T11:38:17.194+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.3.0/spark-sql-kafka-0-10_2.12-3.3.0.jar ...
+[2024-06-27T11:38:17.338+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.3.0!spark-sql-kafka-0-10_2.12.jar (154ms)
+[2024-06-27T11:38:17.349+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.2/postgresql-42.2.2.jar ...
+[2024-06-27T11:38:17.560+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.postgresql#postgresql;42.2.2!postgresql.jar(bundle) (220ms)
+[2024-06-27T11:38:17.572+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.3.0/spark-token-provider-kafka-0-10_2.12-3.3.0.jar ...
+[2024-06-27T11:38:17.596+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.3.0!spark-token-provider-kafka-0-10_2.12.jar (35ms)
+[2024-06-27T11:38:17.615+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.8.1/kafka-clients-2.8.1.jar ...
+[2024-06-27T11:38:18.778+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.kafka#kafka-clients;2.8.1!kafka-clients.jar (1180ms)
+[2024-06-27T11:38:18.788+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+[2024-06-27T11:38:18.815+0000] {docker.py:436} INFO - [SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (35ms)
+[2024-06-27T11:38:18.828+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar ...
+[2024-06-27T11:38:18.862+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.commons#commons-pool2;2.11.1!commons-pool2.jar (45ms)
+[2024-06-27T11:38:18.877+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar ...
+[2024-06-27T11:38:18.889+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.spark-project.spark#unused;1.0.0!unused.jar (23ms)
+[2024-06-27T11:38:18.901+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.2/hadoop-client-runtime-3.3.2.jar ...
+[2024-06-27T11:38:25.831+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.hadoop#hadoop-client-runtime;3.3.2!hadoop-client-runtime.jar (6939ms)
+[2024-06-27T11:38:25.844+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar ...
+[2024-06-27T11:38:25.990+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.lz4#lz4-java;1.8.0!lz4-java.jar (157ms)
+[2024-06-27T11:38:26.015+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.8.4/snappy-java-1.1.8.4.jar ...
+[2024-06-27T11:38:26.436+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.8.4!snappy-java.jar(bundle) (444ms)
+[2024-06-27T11:38:26.446+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar ...
+[2024-06-27T11:38:26.465+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.slf4j#slf4j-api;1.7.32!slf4j-api.jar (27ms)
+[2024-06-27T11:38:26.476+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.3.2/hadoop-client-api-3.3.2.jar ...
+[2024-06-27T11:38:31.111+0000] {docker.py:436} INFO - [SUCCESSFUL ] org.apache.hadoop#hadoop-client-api;3.3.2!hadoop-client-api.jar (4645ms)
+[2024-06-27T11:38:31.121+0000] {docker.py:436} INFO - downloading https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar ...
+[2024-06-27T11:38:31.143+0000] {docker.py:436} INFO - [SUCCESSFUL ] commons-logging#commons-logging;1.1.3!commons-logging.jar (31ms)
+[2024-06-27T11:38:31.144+0000] {docker.py:436} INFO - :: resolution report :: resolve 6954ms :: artifacts dl 13962ms
+[2024-06-27T11:38:31.145+0000] {docker.py:436} INFO - :: modules in use:
+[2024-06-27T11:38:31.145+0000] {docker.py:436} INFO - com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2024-06-27T11:38:31.146+0000] {docker.py:436} INFO - commons-logging#commons-logging;1.1.3 from central in [default]
+[2024-06-27T11:38:31.146+0000] {docker.py:436} INFO - org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2024-06-27T11:38:31.147+0000] {docker.py:436} INFO - org.apache.hadoop#hadoop-client-api;3.3.2 from central in [default]
+[2024-06-27T11:38:31.147+0000] {docker.py:436} INFO - org.apache.hadoop#hadoop-client-runtime;3.3.2 from central in [default]
+[2024-06-27T11:38:31.148+0000] {docker.py:436} INFO - org.apache.kafka#kafka-clients;2.8.1 from central in [default]
+[2024-06-27T11:38:31.149+0000] {docker.py:436} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12;3.3.0 from central in [default]
+[2024-06-27T11:38:31.149+0000] {docker.py:436} INFO - org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.3.0 from central in [default]
+[2024-06-27T11:38:31.150+0000] {docker.py:436} INFO - org.lz4#lz4-java;1.8.0 from central in [default]
+[2024-06-27T11:38:31.151+0000] {docker.py:436} INFO - org.postgresql#postgresql;42.2.2 from central in [default]
+[2024-06-27T11:38:31.151+0000] {docker.py:436} INFO - org.slf4j#slf4j-api;1.7.32 from central in [default]
+	org.spark-project.spark#unused;1.0.0 from central in [default]
+[2024-06-27T11:38:31.152+0000] {docker.py:436} INFO - org.xerial.snappy#snappy-java;1.1.8.4 from central in [default]
+[2024-06-27T11:38:31.152+0000] {docker.py:436} INFO - ---------------------------------------------------------------------
+[2024-06-27T11:38:31.153+0000] {docker.py:436} INFO - |                  |            modules            ||   artifacts   |
+[2024-06-27T11:38:31.154+0000] {docker.py:436} INFO - |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2024-06-27T11:38:31.154+0000] {docker.py:436} INFO - ---------------------------------------------------------------------
+[2024-06-27T11:38:31.155+0000] {docker.py:436} INFO - |      default     |   13  |   13  |   13  |   0   ||   13  |   13  |
+[2024-06-27T11:38:31.155+0000] {docker.py:436} INFO - ---------------------------------------------------------------------
+[2024-06-27T11:38:31.156+0000] {docker.py:436} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-d432d79b-8e43-413b-8138-744ac8fddb79
+[2024-06-27T11:38:31.158+0000] {docker.py:436} INFO - confs: [default]
+[2024-06-27T11:38:31.262+0000] {docker.py:436} INFO - 13 artifacts copied, 0 already retrieved (57403kB/105ms)
+[2024-06-27T11:38:31.733+0000] {docker.py:436} INFO - 24/06/27 11:38:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-06-27T11:38:33.403+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO SparkContext: Running Spark version 3.5.1
+24/06/27 11:38:33 INFO SparkContext: OS info Linux, 6.5.0-41-generic, amd64
+[2024-06-27T11:38:33.405+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO SparkContext: Java version 17.0.11
+[2024-06-27T11:38:33.442+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO ResourceUtils: ==============================================================
+[2024-06-27T11:38:33.443+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-06-27T11:38:33.443+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO ResourceUtils: ==============================================================
+[2024-06-27T11:38:33.444+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO SparkContext: Submitted application: PostgreSQL Connection with PySpark
+[2024-06-27T11:38:33.479+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-06-27T11:38:33.492+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO ResourceProfile: Limiting resource is cpu
+[2024-06-27T11:38:33.493+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-06-27T11:38:33.585+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO SecurityManager: Changing view acls to: spark
+[2024-06-27T11:38:33.586+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO SecurityManager: Changing modify acls to: spark
+[2024-06-27T11:38:33.587+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO SecurityManager: Changing view acls groups to:
+[2024-06-27T11:38:33.588+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO SecurityManager: Changing modify acls groups to:
+[2024-06-27T11:38:33.589+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2024-06-27T11:38:33.960+0000] {docker.py:436} INFO - 24/06/27 11:38:33 INFO Utils: Successfully started service 'sparkDriver' on port 42895.
+[2024-06-27T11:38:34.007+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkEnv: Registering MapOutputTracker
+[2024-06-27T11:38:34.071+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkEnv: Registering BlockManagerMaster
+[2024-06-27T11:38:34.098+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-06-27T11:38:34.099+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-06-27T11:38:34.106+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-06-27T11:38:34.140+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-73a20852-b560-4a53-9752-03355fee939b
+[2024-06-27T11:38:34.161+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-06-27T11:38:34.188+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-06-27T11:38:34.458+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-06-27T11:38:34.589+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-06-27T11:38:34.665+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar at spark://localhost:42895/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.666+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar at spark://localhost:42895/jars/org.postgresql_postgresql-42.2.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.666+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar at spark://localhost:42895/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.667+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar at spark://localhost:42895/jars/org.apache.kafka_kafka-clients-2.8.1.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.668+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at spark://localhost:42895/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.670+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at spark://localhost:42895/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.670+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at spark://localhost:42895/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.671+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar at spark://localhost:42895/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.672+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at spark://localhost:42895/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.673+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar at spark://localhost:42895/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.674+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar at spark://localhost:42895/jars/org.slf4j_slf4j-api-1.7.32.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.676+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar at spark://localhost:42895/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.676+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://localhost:42895/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.681+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.683+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T11:38:34.697+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.697+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.postgresql_postgresql-42.2.2.jar
+[2024-06-27T11:38:34.703+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.704+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T11:38:34.711+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.712+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.kafka_kafka-clients-2.8.1.jar
+[2024-06-27T11:38:34.726+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1719488313390
+24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-27T11:38:34.739+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.740+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-27T11:38:34.756+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1719488313390
+24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.spark-project.spark_unused-1.0.0.jar
+24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar with timestamp 1719488313390
+24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar
+[2024-06-27T11:38:34.808+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.809+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.lz4_lz4-java-1.8.0.jar
+[2024-06-27T11:38:34.816+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar at file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.817+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.xerial.snappy_snappy-java-1.1.8.4.jar
+[2024-06-27T11:38:34.830+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar at file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar with timestamp 1719488313390
+24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.slf4j_slf4j-api-1.7.32.jar
+[2024-06-27T11:38:34.836+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:34.837+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.hadoop_hadoop-client-api-3.3.2.jar
+[2024-06-27T11:38:34.883+0000] {docker.py:436} INFO - 24/06/27 11:38:34 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1719488313390
+24/06/27 11:38:34 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/commons-logging_commons-logging-1.1.3.jar
+[2024-06-27T11:38:35.165+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Starting executor ID driver on host localhost
+[2024-06-27T11:38:35.170+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: OS info Linux, 6.5.0-41-generic, amd64
+24/06/27 11:38:35 INFO Executor: Java version 17.0.11
+[2024-06-27T11:38:35.184+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-06-27T11:38:35.185+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@531d0a74 for default.
+[2024-06-27T11:38:35.210+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.268+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.postgresql_postgresql-42.2.2.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.postgresql_postgresql-42.2.2.jar
+[2024-06-27T11:38:35.276+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.303+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.hadoop_hadoop-client-api-3.3.2.jar
+[2024-06-27T11:38:35.312+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.314+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.xerial.snappy_snappy-java-1.1.8.4.jar
+[2024-06-27T11:38:35.320+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.363+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar
+[2024-06-27T11:38:35.371+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.371+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-27T11:38:35.376+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.377+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T11:38:35.383+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.384+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.32.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.slf4j_slf4j-api-1.7.32.jar
+[2024-06-27T11:38:35.391+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.392+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T11:38:35.396+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.397+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-27T11:38:35.404+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.405+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.lz4_lz4-java-1.8.0.jar
+[2024-06-27T11:38:35.411+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.412+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/commons-logging_commons-logging-1.1.3.jar
+[2024-06-27T11:38:35.415+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.416+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.spark-project.spark_unused-1.0.0.jar
+[2024-06-27T11:38:35.424+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.432+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.8.1.jar has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.kafka_kafka-clients-2.8.1.jar
+[2024-06-27T11:38:35.442+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching spark://localhost:42895/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.517+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO TransportClientFactory: Successfully created connection to localhost/127.0.0.1:42895 after 55 ms (0 ms spent in bootstraps)
+[2024-06-27T11:38:35.532+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: Fetching spark://localhost:42895/jars/org.apache.hadoop_hadoop-client-api-3.3.2.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp15072156156549198045.tmp
+[2024-06-27T11:38:35.753+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp15072156156549198045.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.hadoop_hadoop-client-api-3.3.2.jar
+[2024-06-27T11:38:35.763+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.hadoop_hadoop-client-api-3.3.2.jar to class loader default
+24/06/27 11:38:35 INFO Executor: Fetching spark://localhost:42895/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.765+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: Fetching spark://localhost:42895/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp494775400355405800.tmp
+[2024-06-27T11:38:35.769+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp494775400355405800.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/com.google.code.findbugs_jsr305-3.0.0.jar
+[2024-06-27T11:38:35.780+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/com.google.code.findbugs_jsr305-3.0.0.jar to class loader default
+[2024-06-27T11:38:35.781+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching spark://localhost:42895/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1719488313390
+24/06/27 11:38:35 INFO Utils: Fetching spark://localhost:42895/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp15709633109947892742.tmp
+[2024-06-27T11:38:35.784+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp15709633109947892742.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.commons_commons-pool2-2.11.1.jar
+[2024-06-27T11:38:35.793+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.commons_commons-pool2-2.11.1.jar to class loader default
+[2024-06-27T11:38:35.795+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching spark://localhost:42895/jars/org.apache.kafka_kafka-clients-2.8.1.jar with timestamp 1719488313390
+[2024-06-27T11:38:35.796+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: Fetching spark://localhost:42895/jars/org.apache.kafka_kafka-clients-2.8.1.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp1889555548095654126.tmp
+[2024-06-27T11:38:35.826+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp1889555548095654126.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.kafka_kafka-clients-2.8.1.jar
+[2024-06-27T11:38:35.832+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.kafka_kafka-clients-2.8.1.jar to class loader default
+[2024-06-27T11:38:35.834+0000] {docker.py:436} INFO - 24/06/27 11:38:35 INFO Executor: Fetching spark://localhost:42895/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar with timestamp 1719488313390
+24/06/27 11:38:35 INFO Utils: Fetching spark://localhost:42895/jars/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp15099348047128648507.tmp
+[2024-06-27T11:38:36.054+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp15099348047128648507.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar
+[2024-06-27T11:38:36.062+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.hadoop_hadoop-client-runtime-3.3.2.jar to class loader default
+[2024-06-27T11:38:36.063+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Fetching spark://localhost:42895/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:36.064+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: Fetching spark://localhost:42895/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp6512934658558330304.tmp
+[2024-06-27T11:38:36.068+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp6512934658558330304.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.lz4_lz4-java-1.8.0.jar
+[2024-06-27T11:38:36.073+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.lz4_lz4-java-1.8.0.jar to class loader default
+[2024-06-27T11:38:36.073+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Fetching spark://localhost:42895/jars/org.slf4j_slf4j-api-1.7.32.jar with timestamp 1719488313390
+[2024-06-27T11:38:36.074+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: Fetching spark://localhost:42895/jars/org.slf4j_slf4j-api-1.7.32.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp14883210069441590652.tmp
+[2024-06-27T11:38:36.076+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp14883210069441590652.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.slf4j_slf4j-api-1.7.32.jar
+[2024-06-27T11:38:36.080+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.slf4j_slf4j-api-1.7.32.jar to class loader default
+[2024-06-27T11:38:36.080+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Fetching spark://localhost:42895/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:36.081+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: Fetching spark://localhost:42895/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp7123828558366059945.tmp
+[2024-06-27T11:38:36.082+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp7123828558366059945.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T11:38:36.087+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.3.0.jar to class loader default
+[2024-06-27T11:38:36.088+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Fetching spark://localhost:42895/jars/org.postgresql_postgresql-42.2.2.jar with timestamp 1719488313390
+[2024-06-27T11:38:36.088+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: Fetching spark://localhost:42895/jars/org.postgresql_postgresql-42.2.2.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp7148187566093478094.tmp
+[2024-06-27T11:38:36.093+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp7148187566093478094.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.postgresql_postgresql-42.2.2.jar
+[2024-06-27T11:38:36.097+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.postgresql_postgresql-42.2.2.jar to class loader default
+[2024-06-27T11:38:36.098+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Fetching spark://localhost:42895/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1719488313390
+[2024-06-27T11:38:36.098+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: Fetching spark://localhost:42895/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp14214100650052894984.tmp
+[2024-06-27T11:38:36.100+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp14214100650052894984.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/commons-logging_commons-logging-1.1.3.jar
+[2024-06-27T11:38:36.104+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/commons-logging_commons-logging-1.1.3.jar to class loader default
+[2024-06-27T11:38:36.105+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Fetching spark://localhost:42895/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1719488313390
+24/06/27 11:38:36 INFO Utils: Fetching spark://localhost:42895/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp1663962939684187988.tmp
+[2024-06-27T11:38:36.107+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp1663962939684187988.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.spark-project.spark_unused-1.0.0.jar
+[2024-06-27T11:38:36.111+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.spark-project.spark_unused-1.0.0.jar to class loader default
+[2024-06-27T11:38:36.112+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Fetching spark://localhost:42895/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar with timestamp 1719488313390
+[2024-06-27T11:38:36.113+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: Fetching spark://localhost:42895/jars/org.xerial.snappy_snappy-java-1.1.8.4.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp17956305855074746220.tmp
+[2024-06-27T11:38:36.121+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp17956305855074746220.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.xerial.snappy_snappy-java-1.1.8.4.jar
+[2024-06-27T11:38:36.126+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.xerial.snappy_snappy-java-1.1.8.4.jar to class loader default
+[2024-06-27T11:38:36.127+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Fetching spark://localhost:42895/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar with timestamp 1719488313390
+[2024-06-27T11:38:36.128+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: Fetching spark://localhost:42895/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp6838883268764602685.tmp
+[2024-06-27T11:38:36.131+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/fetchFileTemp6838883268764602685.tmp has been previously copied to /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar
+[2024-06-27T11:38:36.134+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Executor: Adding file:/tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/userFiles-222d82f8-98d5-49e3-ae83-097ad8543910/org.apache.spark_spark-sql-kafka-0-10_2.12-3.3.0.jar to class loader default
+[2024-06-27T11:38:36.147+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39431.
+[2024-06-27T11:38:36.148+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO NettyBlockTransferService: Server created on localhost:39431
+[2024-06-27T11:38:36.150+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-06-27T11:38:36.162+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 39431, None)
+[2024-06-27T11:38:36.170+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO BlockManagerMasterEndpoint: Registering block manager localhost:39431 with 434.4 MiB RAM, BlockManagerId(driver, localhost, 39431, None)
+[2024-06-27T11:38:36.174+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 39431, None)
+[2024-06-27T11:38:36.176+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 39431, None)
+[2024-06-27T11:38:36.829+0000] {docker.py:436} INFO - 2024-06-27 11:38:36,828:create_spark_session:INFO:Spark session created successfully
+[2024-06-27T11:38:36.840+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-06-27T11:38:36.844+0000] {docker.py:436} INFO - 24/06/27 11:38:36 INFO SharedState: Warehouse path is 'file:/opt/bitnami/spark/spark-warehouse'.
+[2024-06-27T11:38:39.160+0000] {docker.py:436} INFO - 2024-06-27 11:38:39,160:create_initial_dataframe:INFO:Initial dataframe created successfully:
+[2024-06-27T11:38:40.044+0000] {docker.py:436} INFO - 2024-06-27 11:38:40,043:start_streaming:INFO:Start streaming ...
+[2024-06-27T11:38:40.333+0000] {docker.py:436} INFO - 2024-06-27 11:38:40,333:run:INFO:Callback Server Starting
+[2024-06-27T11:38:40.334+0000] {docker.py:436} INFO - 2024-06-27 11:38:40,333:run:INFO:Socket listening on ('127.0.0.1', 33799)
+[2024-06-27T11:38:40.364+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+[2024-06-27T11:38:40.402+0000] {docker.py:436} INFO - 24/06/27 11:38:40 WARN ResolveWriteToStream: Temporary checkpoint location created which is deleted normally when the query didn't fail: /tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+[2024-06-27T11:38:40.433+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO ResolveWriteToStream: Checkpoint root file:///tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b resolved to file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b.
+[2024-06-27T11:38:40.434+0000] {docker.py:436} INFO - 24/06/27 11:38:40 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2024-06-27T11:38:40.530+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO CheckpointFileManager: Writing atomically to file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/metadata using temp file file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/.metadata.9e464ffd-63af-4cb6-bff3-4f77d99ae2df.tmp
+[2024-06-27T11:38:40.652+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO CheckpointFileManager: Renamed temp file file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/.metadata.9e464ffd-63af-4cb6-bff3-4f77d99ae2df.tmp to file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/metadata
+[2024-06-27T11:38:40.706+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO MicroBatchExecution: Starting [id = 501e6037-26ca-4280-9fb8-487fc4474910, runId = 2c76d9d8-8491-4bb0-8f17-aa077ad18c20]. Use file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b to store the query checkpoint.
+[2024-06-27T11:38:40.720+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO MicroBatchExecution: Reading table [org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable@3b3db827] from DataSourceV2 named 'kafka' [org.apache.spark.sql.kafka010.KafkaSourceProvider@113791b6]
+[2024-06-27T11:38:40.774+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-06-27T11:38:40.776+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-06-27T11:38:40.777+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO MicroBatchExecution: Starting new streaming query.
+[2024-06-27T11:38:40.780+0000] {docker.py:436} INFO - 24/06/27 11:38:40 INFO MicroBatchExecution: Stream started from {}
+[2024-06-27T11:38:41.336+0000] {docker.py:436} INFO - 24/06/27 11:38:41 INFO AdminClientConfig: AdminClientConfig values: 
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+[2024-06-27T11:38:41.488+0000] {docker.py:436} INFO - 24/06/27 11:38:41 WARN AdminClientConfig: The configuration 'key.deserializer' was supplied but isn't a known config.
+[2024-06-27T11:38:41.489+0000] {docker.py:436} INFO - 24/06/27 11:38:41 WARN AdminClientConfig: The configuration 'value.deserializer' was supplied but isn't a known config.
+[2024-06-27T11:38:41.489+0000] {docker.py:436} INFO - 24/06/27 11:38:41 WARN AdminClientConfig: The configuration 'enable.auto.commit' was supplied but isn't a known config.
+[2024-06-27T11:38:41.490+0000] {docker.py:436} INFO - 24/06/27 11:38:41 WARN AdminClientConfig: The configuration 'max.poll.records' was supplied but isn't a known config.
+[2024-06-27T11:38:41.490+0000] {docker.py:436} INFO - 24/06/27 11:38:41 WARN AdminClientConfig: The configuration 'auto.offset.reset' was supplied but isn't a known config.
+[2024-06-27T11:38:41.493+0000] {docker.py:436} INFO - 24/06/27 11:38:41 INFO AppInfoParser: Kafka version: 2.8.1
+[2024-06-27T11:38:41.493+0000] {docker.py:436} INFO - 24/06/27 11:38:41 INFO AppInfoParser: Kafka commitId: 839b886f9b732b15
+[2024-06-27T11:38:41.494+0000] {docker.py:436} INFO - 24/06/27 11:38:41 INFO AppInfoParser: Kafka startTimeMs: 1719488321488
+[2024-06-27T11:38:42.016+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO CheckpointFileManager: Writing atomically to file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/sources/0/0 using temp file file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/sources/0/.0.0759d002-6578-48c6-b4fa-65eab0fe2c61.tmp
+[2024-06-27T11:38:42.053+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO CheckpointFileManager: Renamed temp file file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/sources/0/.0.0759d002-6578-48c6-b4fa-65eab0fe2c61.tmp to file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/sources/0/0
+[2024-06-27T11:38:42.054+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO KafkaMicroBatchStream: Initial offsets: {"store_source_data":{"0":8}}
+[2024-06-27T11:38:42.092+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO CheckpointFileManager: Writing atomically to file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/offsets/0 using temp file file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/offsets/.0.d24e3b0a-7753-4d7d-9946-51b3b673d6e8.tmp
+[2024-06-27T11:38:42.162+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO CheckpointFileManager: Renamed temp file file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/offsets/.0.d24e3b0a-7753-4d7d-9946-51b3b673d6e8.tmp to file:/tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b/offsets/0
+[2024-06-27T11:38:42.163+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO MicroBatchExecution: Committed offsets for batch 0. Metadata OffsetSeqMetadata(0,1719488322071,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.join.stateFormatVersion -> 2, spark.sql.streaming.stateStore.compression.codec -> lz4, spark.sql.streaming.stateStore.rocksdb.formatVersion -> 5, spark.sql.streaming.statefulOperator.useStrictDistribution -> true, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+[2024-06-27T11:38:42.778+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-27T11:38:42.859+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-27T11:38:42.982+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-27T11:38:42.985+0000] {docker.py:436} INFO - 24/06/27 11:38:42 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-06-27T11:38:43.612+0000] {docker.py:436} INFO - 24/06/27 11:38:43 INFO CodeGenerator: Code generated in 380.068986 ms
+[2024-06-27T11:38:43.908+0000] {docker.py:436} INFO - 2024-06-27 11:38:43,908:wait_for_commands:INFO:Python Server ready to receive messages
+[2024-06-27T11:38:43.909+0000] {docker.py:436} INFO - 2024-06-27 11:38:43,908:wait_for_commands:INFO:Received command c on object id p0
+[2024-06-27T11:38:44.362+0000] {docker.py:436} INFO - 24/06/27 11:38:44 INFO CodeGenerator: Code generated in 90.050273 ms
+[2024-06-27T11:38:44.427+0000] {docker.py:436} INFO - 24/06/27 11:38:44 INFO CodeGenerator: Code generated in 55.1222 ms
+[2024-06-27T11:38:44.494+0000] {docker.py:436} INFO - 24/06/27 11:38:44 INFO CodeGenerator: Code generated in 54.805259 ms
+[2024-06-27T11:38:44.917+0000] {docker.py:436} INFO - 24/06/27 11:38:44 INFO CodeGenerator: Code generated in 21.998529 ms
+[2024-06-27T11:38:44.934+0000] {docker.py:436} INFO - 24/06/27 11:38:44 INFO CodeGenerator: Code generated in 13.763408 ms
+[2024-06-27T11:38:45.079+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO SparkContext: Starting job: start at NativeMethodAccessorImpl.java:0
+[2024-06-27T11:38:45.103+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Registering RDD 8 (start at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+[2024-06-27T11:38:45.119+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Registering RDD 12 (start at NativeMethodAccessorImpl.java:0) as input to shuffle 1
+[2024-06-27T11:38:45.123+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Got job 0 (start at NativeMethodAccessorImpl.java:0) with 200 output partitions
+[2024-06-27T11:38:45.125+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Final stage: ResultStage 2 (start at NativeMethodAccessorImpl.java:0)
+24/06/27 11:38:45 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0, ShuffleMapStage 1)
+[2024-06-27T11:38:45.128+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0, ShuffleMapStage 1)
+[2024-06-27T11:38:45.134+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[8] at start at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-06-27T11:38:45.250+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 41.0 KiB, free 434.4 MiB)
+[2024-06-27T11:38:45.315+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 16.8 KiB, free 434.3 MiB)
+[2024-06-27T11:38:45.318+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:39431 (size: 16.8 KiB, free: 434.4 MiB)
+[2024-06-27T11:38:45.326+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+[2024-06-27T11:38:45.349+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[8] at start at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-06-27T11:38:45.351+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2024-06-27T11:38:45.382+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[12] at start at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-06-27T11:38:45.391+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 14.0 KiB, free 434.3 MiB)
+[2024-06-27T11:38:45.393+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 7.4 KiB, free 434.3 MiB)
+[2024-06-27T11:38:45.394+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:39431 (size: 7.4 KiB, free: 434.4 MiB)
+[2024-06-27T11:38:45.395+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2024-06-27T11:38:45.398+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[12] at start at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-06-27T11:38:45.399+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2024-06-27T11:38:45.454+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (localhost, executor driver, partition 0, PROCESS_LOCAL, 11061 bytes)
+[2024-06-27T11:38:45.478+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (localhost, executor driver, partition 0, PROCESS_LOCAL, 9961 bytes)
+[2024-06-27T11:38:45.498+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/06/27 11:38:45 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+[2024-06-27T11:38:45.695+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO CodeGenerator: Code generated in 30.456887 ms
+[2024-06-27T11:38:45.720+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO CodeGenerator: Code generated in 18.641681 ms
+[2024-06-27T11:38:45.746+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO CodeGenerator: Code generated in 30.567564 ms
+[2024-06-27T11:38:45.784+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO CodeGenerator: Code generated in 51.916418 ms
+[2024-06-27T11:38:45.797+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO JDBCRDD: closed connection
+[2024-06-27T11:38:45.813+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO CodeGenerator: Code generated in 29.864824 ms
+[2024-06-27T11:38:45.831+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO CodeGenerator: Code generated in 16.390623 ms
+[2024-06-27T11:38:45.900+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1814 bytes result sent to driver
+[2024-06-27T11:38:45.933+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 454 ms on localhost (executor driver) (1/1)
+[2024-06-27T11:38:45.945+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2024-06-27T11:38:45.956+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: ShuffleMapStage 1 (start at NativeMethodAccessorImpl.java:0) finished in 0.567 s
+24/06/27 11:38:45 INFO DAGScheduler: looking for newly runnable stages
+[2024-06-27T11:38:45.958+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: running: Set(ShuffleMapStage 0)
+[2024-06-27T11:38:45.959+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: waiting: Set(ResultStage 2)
+[2024-06-27T11:38:45.959+0000] {docker.py:436} INFO - 24/06/27 11:38:45 INFO DAGScheduler: failed: Set()
+[2024-06-27T11:38:46.001+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO CodeGenerator: Code generated in 32.649703 ms
+[2024-06-27T11:38:46.052+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO CodeGenerator: Code generated in 36.33929 ms
+[2024-06-27T11:38:46.078+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO ConsumerConfig: ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = none
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+[2024-06-27T11:38:46.144+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO AppInfoParser: Kafka version: 2.8.1
+[2024-06-27T11:38:46.144+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO AppInfoParser: Kafka commitId: 839b886f9b732b15
+[2024-06-27T11:38:46.145+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO AppInfoParser: Kafka startTimeMs: 1719488326143
+[2024-06-27T11:38:46.152+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO KafkaConsumer: [Consumer clientId=consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1, groupId=spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor] Subscribed to partition(s): store_source_data-0
+[2024-06-27T11:38:46.167+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO KafkaConsumer: [Consumer clientId=consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1, groupId=spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor] Seeking to offset 8 for partition store_source_data-0
+[2024-06-27T11:38:46.178+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO Metadata: [Consumer clientId=consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1, groupId=spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor] Cluster ID: DvxeahjVTmCRqiJU0Wz8qg
+[2024-06-27T11:38:46.243+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1, groupId=spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor] Seeking to EARLIEST offset of partition store_source_data-0
+[2024-06-27T11:38:46.746+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1, groupId=spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor] Resetting offset for partition store_source_data-0 to position FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 0 rack: null)], epoch=10}}.
+[2024-06-27T11:38:46.746+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1, groupId=spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor] Seeking to LATEST offset of partition store_source_data-0
+[2024-06-27T11:38:46.748+0000] {docker.py:436} INFO - 24/06/27 11:38:46 INFO SubscriptionState: [Consumer clientId=consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1, groupId=spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor] Resetting offset for partition store_source_data-0 to position FetchPosition{offset=78, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 0 rack: null)], epoch=10}}.
+[2024-06-27T11:38:47.319+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2556 bytes result sent to driver
+[2024-06-27T11:38:47.323+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1905 ms on localhost (executor driver) (1/1)
+[2024-06-27T11:38:47.326+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO DAGScheduler: ShuffleMapStage 0 (start at NativeMethodAccessorImpl.java:0) finished in 2.166 s
+[2024-06-27T11:38:47.327+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO DAGScheduler: looking for newly runnable stages
+[2024-06-27T11:38:47.328+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO DAGScheduler: running: Set()
+[2024-06-27T11:38:47.329+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+24/06/27 11:38:47 INFO DAGScheduler: waiting: Set(ResultStage 2)
+[2024-06-27T11:38:47.330+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO DAGScheduler: failed: Set()
+[2024-06-27T11:38:47.333+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[19] at start at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-06-27T11:38:47.415+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 74.9 KiB, free 434.2 MiB)
+[2024-06-27T11:38:47.417+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 33.1 KiB, free 434.2 MiB)
+[2024-06-27T11:38:47.418+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:39431 (size: 33.1 KiB, free: 434.3 MiB)
+[2024-06-27T11:38:47.419+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1585
+[2024-06-27T11:38:47.441+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO DAGScheduler: Submitting 200 missing tasks from ResultStage 2 (MapPartitionsRDD[19] at start at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+[2024-06-27T11:38:47.442+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO TaskSchedulerImpl: Adding task set 2.0 with 200 tasks resource profile 0
+[2024-06-27T11:38:47.454+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO TaskSetManager: Starting task 30.0 in stage 2.0 (TID 2) (localhost, executor driver, partition 30, NODE_LOCAL, 10408 bytes)
+[2024-06-27T11:38:47.462+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO TaskSetManager: Starting task 40.0 in stage 2.0 (TID 3) (localhost, executor driver, partition 40, NODE_LOCAL, 10408 bytes)
+[2024-06-27T11:38:47.464+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO TaskSetManager: Starting task 50.0 in stage 2.0 (TID 4) (localhost, executor driver, partition 50, NODE_LOCAL, 10408 bytes)
+[2024-06-27T11:38:47.467+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO TaskSetManager: Starting task 51.0 in stage 2.0 (TID 5) (localhost, executor driver, partition 51, NODE_LOCAL, 10408 bytes)
+[2024-06-27T11:38:47.470+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO Executor: Running task 30.0 in stage 2.0 (TID 2)
+[2024-06-27T11:38:47.478+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO Executor: Running task 40.0 in stage 2.0 (TID 3)
+[2024-06-27T11:38:47.509+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO Executor: Running task 50.0 in stage 2.0 (TID 4)
+[2024-06-27T11:38:47.523+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO Executor: Running task 51.0 in stage 2.0 (TID 5)
+[2024-06-27T11:38:47.547+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO BlockManagerInfo: Removed broadcast_1_piece0 on localhost:39431 in memory (size: 7.4 KiB, free: 434.4 MiB)
+[2024-06-27T11:38:47.783+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Getting 1 (171.0 B) non-empty blocks including 1 (171.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2024-06-27T11:38:47.790+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Getting 1 (189.0 B) non-empty blocks including 1 (189.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 29 ms
+[2024-06-27T11:38:47.795+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Getting 1 (189.0 B) non-empty blocks including 1 (189.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 19 ms
+24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Getting 1 (171.0 B) non-empty blocks including 1 (171.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 8 ms
+24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 32 ms
+[2024-06-27T11:38:47.850+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO CodeGenerator: Code generated in 38.917218 ms
+[2024-06-27T11:38:47.901+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO CodeGenerator: Code generated in 37.30002 ms
+[2024-06-27T11:38:47.952+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO CodeGenerator: Code generated in 15.632234 ms
+[2024-06-27T11:38:47.965+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2024-06-27T11:38:47.966+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2024-06-27T11:38:47.969+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2024-06-27T11:38:47.970+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2024-06-27T11:38:47.970+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+[2024-06-27T11:38:47.971+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+24/06/27 11:38:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 4 ms
+[2024-06-27T11:38:47.984+0000] {docker.py:436} INFO - 24/06/27 11:38:47 INFO CodeGenerator: Code generated in 15.399018 ms
+[2024-06-27T11:38:48.024+0000] {docker.py:436} INFO - 24/06/27 11:38:48 INFO CodeGenerator: Code generated in 31.91069 ms
+[2024-06-27T11:38:49.644+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO CodeGenerator: Code generated in 14.376003 ms
+[2024-06-27T11:38:49.736+0000] {docker.py:436} INFO - 24/06/27 11:38:49 ERROR Executor: Exception in task 51.0 in stage 2.0 (TID 5)
+java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Refrigerator','2023-01-23',800.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+24/06/27 11:38:49 ERROR Executor: Exception in task 50.0 in stage 2.0 (TID 4)
+java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Chair','2023-01-31',100.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:49.739+0000] {docker.py:436} INFO - 24/06/27 11:38:49 ERROR Executor: Exception in task 40.0 in stage 2.0 (TID 3)
+java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Office Chair','2023-01-05',200.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:49.739+0000] {docker.py:436} INFO - 24/06/27 11:38:49 ERROR Executor: Exception in task 30.0 in stage 2.0 (TID 2)
+java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:49.775+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO TaskSetManager: Starting task 58.0 in stage 2.0 (TID 6) (localhost, executor driver, partition 58, NODE_LOCAL, 10408 bytes)
+[2024-06-27T11:38:49.777+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO Executor: Running task 58.0 in stage 2.0 (TID 6)
+[2024-06-27T11:38:49.786+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO TaskSetManager: Starting task 69.0 in stage 2.0 (TID 7) (localhost, executor driver, partition 69, NODE_LOCAL, 10408 bytes)
+[2024-06-27T11:38:49.800+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO Executor: Running task 69.0 in stage 2.0 (TID 7)
+[2024-06-27T11:38:49.816+0000] {docker.py:436} INFO - 24/06/27 11:38:49 WARN TaskSetManager: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:49.818+0000] {docker.py:436} INFO - 24/06/27 11:38:49 ERROR TaskSetManager: Task 30 in stage 2.0 failed 1 times; aborting job
+[2024-06-27T11:38:49.822+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO ShuffleBlockFetcherIterator: Getting 1 (189.0 B) non-empty blocks including 1 (189.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2024-06-27T11:38:49.823+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO ShuffleBlockFetcherIterator: Getting 1 (189.0 B) non-empty blocks including 1 (189.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2024-06-27T11:38:49.823+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+[2024-06-27T11:38:49.824+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+[2024-06-27T11:38:49.837+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2024-06-27T11:38:49.838+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+[2024-06-27T11:38:49.840+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO TaskSchedulerImpl: Cancelling stage 2
+[2024-06-27T11:38:49.842+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage cancelled: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+[2024-06-27T11:38:49.857+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO TaskSchedulerImpl: Stage 2 was cancelled
+[2024-06-27T11:38:49.862+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO DAGScheduler: ResultStage 2 (start at NativeMethodAccessorImpl.java:0) failed in 2.473 s due to Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+[2024-06-27T11:38:49.864+0000] {docker.py:436} INFO - 24/06/27 11:38:49 WARN TaskSetManager: Lost task 51.0 in stage 2.0 (TID 5) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Refrigerator','2023-01-23',800.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:49.869+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO Executor: Executor is trying to kill task 58.0 in stage 2.0 (TID 6), reason: Stage cancelled: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+[2024-06-27T11:38:49.871+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO Executor: Executor is trying to kill task 69.0 in stage 2.0 (TID 7), reason: Stage cancelled: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+[2024-06-27T11:38:49.873+0000] {docker.py:436} INFO - 24/06/27 11:38:49 WARN TaskSetManager: Lost task 50.0 in stage 2.0 (TID 4) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Chair','2023-01-31',100.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:49.879+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2024-06-27T11:38:49.879+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2024-06-27T11:38:49.883+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO DAGScheduler: Job 0 failed: start at NativeMethodAccessorImpl.java:0, took 4.803457 s
+[2024-06-27T11:38:49.884+0000] {docker.py:436} INFO - 24/06/27 11:38:49 WARN TaskSetManager: Lost task 40.0 in stage 2.0 (TID 3) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Office Chair','2023-01-05',200.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:49.895+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO Executor: Executor killed task 58.0 in stage 2.0 (TID 6), reason: Stage cancelled: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+[2024-06-27T11:38:49.914+0000] {docker.py:436} INFO - 24/06/27 11:38:49 WARN TaskSetManager: Lost task 58.0 in stage 2.0 (TID 6) (localhost executor driver): TaskKilled (Stage cancelled: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:)
+[2024-06-27T11:38:49.916+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO Executor: Executor killed task 69.0 in stage 2.0 (TID 7), reason: Stage cancelled: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+[2024-06-27T11:38:49.939+0000] {docker.py:436} INFO - 24/06/27 11:38:49 WARN TaskSetManager: Lost task 69.0 in stage 2.0 (TID 7) (localhost executor driver): TaskKilled (Stage cancelled: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:)
+[2024-06-27T11:38:49.949+0000] {docker.py:436} INFO - 24/06/27 11:38:49 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2024-06-27T11:38:50.141+0000] {docker.py:436} INFO - 2024-06-27 11:38:50,088:_call_proxy:ERROR:There was an exception while executing the Python Proxy on the Python Side.
+Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 617, in _call_proxy
+    return_value = getattr(self.pool[obj_id], method)(*params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 120, in call
+    raise e
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in call
+    self.func(DataFrame(jdf, wrapped_session_jdf), batch_id)
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 128, in <lambda>
+    .write.jdbc(
+           ^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1984, in jdbc
+    self.mode(mode)._jwrite.jdbc(url, table, jprop)
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o77.jdbc.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2419)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2438)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2463)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$1(RDD.scala:1039)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:410)
+	at org.apache.spark.rdd.RDD.foreachPartition(RDD.scala:1037)
+	at org.apache.spark.sql.Dataset.$anonfun$foreachPartition$1(Dataset.scala:3514)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.Dataset.$anonfun$withNewRDDExecutionId$1(Dataset.scala:4309)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:4307)
+	at org.apache.spark.sql.Dataset.foreachPartition(Dataset.scala:3514)
+	at org.apache.spark.sq
+[2024-06-27T11:38:50.142+0000] {docker.py:436} INFO - l.execution.datasources.jdbc.JdbcUtils$.saveTable(JdbcUtils.scala:901)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:70)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:48)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:859)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:388)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:361)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:248)
+	at org.apache.spark.sql.DataFrameWriter.jdbc(DataFrameWriter.scala:756)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.sendCommand(ClientServerConnection.java:244)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:384)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:356)
+	at py4j.reflection.PythonProxyHandler.invoke(PythonProxyHandler.java:106)
+	at jdk.proxy3/jdk.proxy3.$Proxy30.call(Unknown Source)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1$adapted(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.SingleBatchExecutor.execute(TriggerExecutor.scala:39)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:50.200+0000] {docker.py:436} INFO - 24/06/27 11:38:50 ERROR MicroBatchExecution: Query [id = 501e6037-26ca-4280-9fb8-487fc4474910, runId = 2c76d9d8-8491-4bb0-8f17-aa077ad18c20] terminated with error
+py4j.Py4JException: An exception was raised by the Python Proxy. Return Message: Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 617, in _call_proxy
+    return_value = getattr(self.pool[obj_id], method)(*params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 120, in call
+    raise e
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in call
+    self.func(DataFrame(jdf, wrapped_session_jdf), batch_id)
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 128, in <lambda>
+    .write.jdbc(
+           ^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1984, in jdbc
+    self.mode(mode)._jwrite.jdbc(url, table, jprop)
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o77.jdbc.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2419)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2438)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2463)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$1(RDD.scala:1039)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:410)
+	at org.apache.spark.rdd.RDD.foreachPartition(RDD.scala:1037)
+	at org.apache.spark.sql.Dataset.$anonfun$foreachPartition$1(Dataset.scala:3514)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.Dataset.$anonfun$withNewRDDExecutionId$1(Dataset.scala:4309)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:4307)
+	at org.apache.spark.sql.Dataset.foreachPartition(Dataset.scala:3514)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.saveTable(JdbcUtils.scala:901)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:70)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:48)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:859)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:388)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:361)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:248)
+	at org.apache.spark.sql.DataFrameWriter.jdbc(DataFrameWriter.scala:756)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.sendCommand(ClientServerConnection.java:244)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:384)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:356)
+	at py4j.reflection.PythonProxyHandler.invoke(PythonProxyHandler.java:106)
+	at jdk.proxy3/jdk.proxy3.$Proxy30.call(Unknown Source)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1$adapted(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.SingleBatchExecutor.execute(TriggerExecutor.scala:39)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+
+	at py4j.Protocol.getReturnValue(Protocol.java:476)
+	at py4j.reflection.PythonProxyHandler.invoke(PythonProxyHandler.java:108)
+	at jdk.proxy3/jdk.proxy3.$Proxy30.call(Unknown Source)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1$adapted(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.SingleBatchExecutor.execute(TriggerExecutor.scala:39)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+[2024-06-27T11:38:50.201+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO AppInfoParser: App info kafka.admin.client for adminclient-1 unregistered
+[2024-06-27T11:38:50.207+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO Metrics: Metrics scheduler closed
+[2024-06-27T11:38:50.208+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO Metrics: Closing reporter org.apache.kafka.common.metrics.JmxReporter
+[2024-06-27T11:38:50.209+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO Metrics: Metrics reporters closed
+[2024-06-27T11:38:50.210+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO MicroBatchExecution: Async log purge executor pool for query [id = 501e6037-26ca-4280-9fb8-487fc4474910, runId = 2c76d9d8-8491-4bb0-8f17-aa077ad18c20] has been shutdown
+[2024-06-27T11:38:50.448+0000] {docker.py:436} INFO - Traceback (most recent call last):
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 150, in <module>
+[2024-06-27T11:38:50.449+0000] {docker.py:436} INFO - write_to_postgres()
+[2024-06-27T11:38:50.449+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 146, in write_to_postgres
+[2024-06-27T11:38:50.450+0000] {docker.py:436} INFO - start_streaming(final_df,spark)
+[2024-06-27T11:38:50.450+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 135, in start_streaming
+    return query.awaitTermination()
+[2024-06-27T11:38:50.451+0000] {docker.py:436} INFO - 
+[2024-06-27T11:38:50.451+0000] {docker.py:436} INFO - ^^^^^^
+[2024-06-27T11:38:50.452+0000] {docker.py:436} INFO - ^
+[2024-06-27T11:38:50.452+0000] {docker.py:436} INFO - ^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/streaming/query.py", line 221, in awaitTermination
+[2024-06-27T11:38:50.453+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-06-27T11:38:50.453+0000] {docker.py:436} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+[2024-06-27T11:38:50.453+0000] {docker.py:436} INFO - pyspark.errors.exceptions.captured.StreamingQueryException
+[2024-06-27T11:38:50.460+0000] {docker.py:436} INFO - : [STREAM_FAILED] Query [id = 501e6037-26ca-4280-9fb8-487fc4474910, runId = 2c76d9d8-8491-4bb0-8f17-aa077ad18c20] terminated with exception: An exception was raised by the Python Proxy. Return Message: Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 617, in _call_proxy
+    return_value = getattr(self.pool[obj_id], method)(*params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 120, in call
+    raise e
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in call
+    self.func(DataFrame(jdf, wrapped_session_jdf), batch_id)
+  File "/opt/bitnami/spark/scripts/spark_bronze_layer.py", line 128, in <lambda>
+    .write.jdbc(
+           ^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1984, in jdbc
+    self.mode(mode)._jwrite.jdbc(url, table, jprop)
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o77.jdbc.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 30 in stage 2.0 failed 1 times, most recent failure: Lost task 30.0 in stage 2.0 (TID 2) (localhost executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2419)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2438)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2463)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$1(RDD.scala:1039)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:410)
+	at org.apache.spark.rdd.RDD.foreachPartition(RDD.scala:1037)
+	at org.apache.spark.sql.Dataset.$anonfun$foreachPartition$1(Dataset.scala:3514)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.Dataset.$anonfun$withNewRDDExecutionId$1(Dataset.scala:4309)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:4307)
+	at org.apache.spark.sql.Dataset.foreachPartition(Dataset.scala:3514)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.saveTable(JdbcUtils.scala:901)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:70)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:48)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:859)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:388)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:361)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:248)
+	at org.apache.spark.sql.DataFrameWriter.jdbc(DataFrameWriter.scala:756)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.sendCommand(ClientServerConnection.java:244)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:384)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:356)
+	at py4j.reflection.PythonProxyHandler.invoke(PythonProxyHandler.java:106)
+	at jdk.proxy3/jdk.proxy3.$Proxy30.call(Unknown Source)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1$adapted(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.SingleBatchExecutor.execute(TriggerExecutor.scala:39)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO bronze_grocery_purchase ("item_purchased","date_of_purchase","cost","quantity","purchased_by","payment_method") VALUES ('Bed','2023-02-02',500.0,1,'Father','Card') was aborted: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:819)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1556)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:751)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:902)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:901)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "date_of_purchase" is of type date but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 136
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2433)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2178)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:306)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:816)
+	... 18 more
+[2024-06-27T11:38:50.461+0000] {docker.py:436} INFO - 2024-06-27 11:38:50,460:close:INFO:Closing down clientserver connection
+[2024-06-27T11:38:50.521+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO Metrics: Metrics scheduler closed
+[2024-06-27T11:38:50.521+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO Metrics: Closing reporter org.apache.kafka.common.metrics.JmxReporter
+[2024-06-27T11:38:50.522+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO Metrics: Metrics reporters closed
+[2024-06-27T11:38:50.526+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO AppInfoParser: App info kafka.consumer for consumer-spark-kafka-source-94ae7930-394a-4f51-a498-9ade922f835e--1514363207-executor-1 unregistered
+[2024-06-27T11:38:50.526+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-06-27T11:38:50.527+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-06-27T11:38:50.543+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+[2024-06-27T11:38:50.557+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-06-27T11:38:50.572+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO MemoryStore: MemoryStore cleared
+[2024-06-27T11:38:50.572+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO BlockManager: BlockManager stopped
+[2024-06-27T11:38:50.575+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-06-27T11:38:50.578+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-06-27T11:38:50.588+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO SparkContext: Successfully stopped SparkContext
+[2024-06-27T11:38:50.589+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO ShutdownHookManager: Shutdown hook called
+[2024-06-27T11:38:50.589+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO ShutdownHookManager: Deleting directory /tmp/temporary-f561224b-68b6-47b5-913e-37c529b09a9b
+[2024-06-27T11:38:50.594+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO ShutdownHookManager: Deleting directory /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8
+[2024-06-27T11:38:50.598+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO ShutdownHookManager: Deleting directory /tmp/spark-f4920104-e448-46c9-a9e7-31ae150f1db8/pyspark-aa01c6fb-9636-4cde-a54b-214cdb6e55fb
+[2024-06-27T11:38:50.602+0000] {docker.py:436} INFO - 24/06/27 11:38:50 INFO ShutdownHookManager: Deleting directory /tmp/spark-5108f8e0-27e0-4ba0-9b7b-d336122c8bd0
+[2024-06-27T11:38:50.954+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T11:38:50.968+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http://docker-proxy:2375/v1.45/containers/create
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 371, in _run_image
+    return self._run_image_with_mounts([*self.mounts, tmp_mount], add_tmp_variable=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 398, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 400 Client Error for http://docker-proxy:2375/v1.45/containers/create: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /tmp/airflowtmp21utdkvo")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 509, in execute
+    return self._run_image()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 380, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 444, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+[2024-06-27T11:38:50.978+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Stage_1, task_id=run_bronze_job, run_id=manual__2024-06-27T11:37:59.291540+00:00, execution_date=20240627T113759, start_date=20240627T113806, end_date=20240627T113850
+[2024-06-27T11:38:50.997+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 388 for task run_bronze_job (Docker container failed: {'StatusCode': 1}; 790)
+[2024-06-27T11:38:51.011+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-27T11:38:51.022+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

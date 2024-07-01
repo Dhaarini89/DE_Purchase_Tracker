@@ -1,0 +1,35 @@
+[2024-06-27T11:38:02.942+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T11:38:02.981+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stage_1.kafka_producer manual__2024-06-27T11:37:59.291540+00:00 [queued]>
+[2024-06-27T11:38:02.994+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stage_1.kafka_producer manual__2024-06-27T11:37:59.291540+00:00 [queued]>
+[2024-06-27T11:38:02.994+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-27T11:38:03.011+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): kafka_producer> on 2024-06-27 11:37:59.291540+00:00
+[2024-06-27T11:38:03.018+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=782) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T11:38:03.019+0000] {standard_task_runner.py:63} INFO - Started process 783 to run task
+[2024-06-27T11:38:03.018+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Stage_1', 'kafka_producer', 'manual__2024-06-27T11:37:59.291540+00:00', '--job-id', '385', '--raw', '--subdir', 'DAGS_FOLDER/kafka_dag.py', '--cfg-path', '/tmp/tmphnr6hdsh']
+[2024-06-27T11:38:03.020+0000] {standard_task_runner.py:91} INFO - Job 385: Subtask kafka_producer
+[2024-06-27T11:38:03.035+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-27T11:38:03.070+0000] {task_command.py:426} INFO - Running <TaskInstance: Stage_1.kafka_producer manual__2024-06-27T11:37:59.291540+00:00 [running]> on host 3d646c49e37a
+[2024-06-27T11:38:03.183+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stage_1' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T11:37:59.291540+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T11:37:59.291540+00:00'
+[2024-06-27T11:38:03.184+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T11:38:03.200+0000] {logging_mixin.py:188} INFO - Files and directories in '/opt/***/':
+[2024-06-27T11:38:03.200+0000] {logging_mixin.py:188} INFO - logs
+[2024-06-27T11:38:03.200+0000] {logging_mixin.py:188} INFO - dags
+[2024-06-27T11:38:03.201+0000] {logging_mixin.py:188} INFO - ***.cfg
+[2024-06-27T11:38:03.201+0000] {logging_mixin.py:188} INFO - src
+[2024-06-27T11:38:03.201+0000] {logging_mixin.py:188} INFO - plugins
+[2024-06-27T11:38:03.203+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: connecting to kafka:9092 [('172.18.0.2', 9092) IPv4]
+[2024-06-27T11:38:03.204+0000] {conn.py:1206} INFO - Probing node bootstrap-0 broker version
+[2024-06-27T11:38:03.204+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: Connection complete.
+[2024-06-27T11:38:03.308+0000] {conn.py:1268} INFO - Broker version identified as 2.6.0
+[2024-06-27T11:38:03.308+0000] {conn.py:1269} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-27T11:38:03.313+0000] {conn.py:380} INFO - <BrokerConnection node_id=0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: connecting to kafka:9092 [('172.18.0.2', 9092) IPv4]
+[2024-06-27T11:38:03.313+0000] {conn.py:410} INFO - <BrokerConnection node_id=0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: Connection complete.
+[2024-06-27T11:38:03.314+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.2', 9092)]>: Closing connection. 
+[2024-06-27T11:38:03.318+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-27T11:38:03.319+0000] {conn.py:919} INFO - <BrokerConnection node_id=0 host=kafka:9092 <connected> [IPv4 ('172.18.0.2', 9092)]>: Closing connection. 
+[2024-06-27T11:38:03.320+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-27T11:38:03.320+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T11:38:03.334+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Stage_1, task_id=kafka_producer, run_id=manual__2024-06-27T11:37:59.291540+00:00, execution_date=20240627T113759, start_date=20240627T113802, end_date=20240627T113803
+[2024-06-27T11:38:03.393+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-27T11:38:03.450+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-27T11:38:03.455+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
