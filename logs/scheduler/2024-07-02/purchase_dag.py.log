@@ -1185,3 +1185,565 @@
 [2024-07-02T12:11:40.545+0000] {logging_mixin.py:188} INFO - [2024-07-02T12:11:40.544+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-07-02T12:11:40.573+0000] {logging_mixin.py:188} INFO - [2024-07-02T12:11:40.573+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
 [2024-07-02T12:11:40.595+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.169 seconds
+[2024-07-02T12:12:10.774+0000] {processor.py:161} INFO - Started process (PID=1241) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T12:12:10.777+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T12:12:10.779+0000] {logging_mixin.py:188} INFO - [2024-07-02T12:12:10.778+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T12:12:10.860+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T12:12:10.891+0000] {logging_mixin.py:188} INFO - [2024-07-02T12:12:10.891+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T12:12:10.919+0000] {logging_mixin.py:188} INFO - [2024-07-02T12:12:10.919+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T12:12:10.947+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.180 seconds
+[2024-07-02T19:22:31.099+0000] {processor.py:161} INFO - Started process (PID=160) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:22:31.102+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:22:31.104+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:22:31.104+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:22:31.222+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:22:31.219+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:22:31.224+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:22:31.253+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.162 seconds
+[2024-07-02T19:23:01.313+0000] {processor.py:161} INFO - Started process (PID=165) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:23:01.316+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:23:01.318+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:23:01.317+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:23:01.383+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:23:01.381+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:23:01.384+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:23:01.403+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.097 seconds
+[2024-07-02T19:23:31.650+0000] {processor.py:161} INFO - Started process (PID=170) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:23:31.651+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:23:31.651+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:23:31.651+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:23:31.715+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:23:31.713+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:23:31.715+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:23:31.733+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.090 seconds
+[2024-07-02T19:24:01.886+0000] {processor.py:161} INFO - Started process (PID=175) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:24:01.889+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:24:01.890+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:24:01.889+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:24:01.955+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:24:01.954+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:24:01.956+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:24:01.972+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.094 seconds
+[2024-07-02T19:24:32.164+0000] {processor.py:161} INFO - Started process (PID=180) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:24:32.165+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:24:32.165+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:24:32.165+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:24:32.223+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:24:32.222+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:24:32.224+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:24:32.242+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.085 seconds
+[2024-07-02T19:25:02.397+0000] {processor.py:161} INFO - Started process (PID=185) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:25:02.398+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:25:02.398+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:25:02.398+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:25:02.461+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:25:02.460+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:25:02.462+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:25:02.478+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.089 seconds
+[2024-07-02T19:25:32.659+0000] {processor.py:161} INFO - Started process (PID=190) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:25:32.660+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:25:32.661+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:25:32.660+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:25:32.724+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:25:32.723+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:25:32.725+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:25:32.743+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.090 seconds
+[2024-07-02T19:26:02.894+0000] {processor.py:161} INFO - Started process (PID=195) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:26:02.896+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:26:02.897+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:26:02.897+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:26:02.963+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:26:02.962+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:26:02.964+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:26:02.981+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.095 seconds
+[2024-07-02T19:26:33.175+0000] {processor.py:161} INFO - Started process (PID=200) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:26:33.176+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:26:33.177+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:26:33.176+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:26:33.235+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:26:33.234+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:26:33.236+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:26:33.268+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.098 seconds
+[2024-07-02T19:27:03.411+0000] {processor.py:161} INFO - Started process (PID=205) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:27:03.414+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:27:03.415+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:27:03.414+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:27:03.478+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:27:03.477+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:27:03.479+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:27:03.497+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.093 seconds
+[2024-07-02T19:27:33.688+0000] {processor.py:161} INFO - Started process (PID=210) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:27:33.689+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:27:33.690+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:27:33.689+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:27:33.753+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:27:33.752+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:27:33.754+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:27:33.775+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.095 seconds
+[2024-07-02T19:28:03.886+0000] {processor.py:161} INFO - Started process (PID=215) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:28:03.887+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:28:03.888+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:28:03.887+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:28:03.949+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:28:03.947+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:28:03.950+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:28:03.968+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.091 seconds
+[2024-07-02T19:28:34.131+0000] {processor.py:161} INFO - Started process (PID=220) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:28:34.132+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:28:34.132+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:28:34.132+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:28:34.196+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:28:34.194+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed
+ImportError: cannot import name 'gold_data_feed' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py)
+[2024-07-02T19:28:34.197+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:28:34.215+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.092 seconds
+[2024-07-02T19:29:04.308+0000] {processor.py:161} INFO - Started process (PID=225) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:04.310+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:29:04.311+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:29:04.311+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:04.436+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:04.787+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:29:04.786+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:29:04.816+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:29:04.816+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:29:04.846+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.548 seconds
+[2024-07-02T19:29:23.493+0000] {processor.py:161} INFO - Started process (PID=230) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:23.494+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:29:23.495+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:29:23.494+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:23.566+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:29:23.565+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed_gen
+ImportError: cannot import name 'gold_data_feed_gen' from 'gold_data_feed' (/opt/airflow/dags/gold_data_feed.py). Did you mean: 'gold_data_feed'?
+[2024-07-02T19:29:23.567+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:23.585+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.099 seconds
+[2024-07-02T19:29:53.654+0000] {processor.py:161} INFO - Started process (PID=235) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:53.656+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:29:53.658+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:29:53.657+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:53.739+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:29:53.773+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:29:53.772+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:29:53.802+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:29:53.801+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:29:53.829+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.184 seconds
+[2024-07-02T19:30:23.895+0000] {processor.py:161} INFO - Started process (PID=240) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:30:23.896+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:30:23.897+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:30:23.897+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:30:23.988+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:30:24.023+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:30:24.023+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:30:24.055+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:30:24.054+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:30:24.080+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.192 seconds
+[2024-07-02T19:30:54.177+0000] {processor.py:161} INFO - Started process (PID=256) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:30:54.181+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:30:54.183+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:30:54.182+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:30:54.331+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:30:54.407+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:30:54.406+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:30:54.454+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:30:54.453+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:30:54.493+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.328 seconds
+[2024-07-02T19:31:24.666+0000] {processor.py:161} INFO - Started process (PID=261) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:31:24.667+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:31:24.669+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:31:24.668+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:31:24.799+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:31:24.837+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:31:24.836+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:31:24.871+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:31:24.870+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:31:24.911+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.255 seconds
+[2024-07-02T19:31:55.104+0000] {processor.py:161} INFO - Started process (PID=268) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:31:55.106+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:31:55.107+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:31:55.107+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:31:55.179+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:31:55.210+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:31:55.210+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:31:55.242+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:31:55.242+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:31:55.264+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.167 seconds
+[2024-07-02T19:32:25.433+0000] {processor.py:161} INFO - Started process (PID=273) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:32:25.434+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:32:25.435+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:32:25.435+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:32:25.519+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:32:25.552+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:32:25.552+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:32:25.584+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:32:25.584+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:32:25.609+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.184 seconds
+[2024-07-02T19:32:55.805+0000] {processor.py:161} INFO - Started process (PID=289) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:32:55.806+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:32:55.807+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:32:55.807+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:32:55.933+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:32:55.969+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:32:55.969+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:32:55.999+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:32:55.999+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:32:56.025+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.230 seconds
+[2024-07-02T19:33:26.197+0000] {processor.py:161} INFO - Started process (PID=294) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:33:26.199+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:33:26.201+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:33:26.201+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:33:26.324+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:33:26.415+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:33:26.414+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:33:26.463+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:33:26.463+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:33:26.503+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.316 seconds
+[2024-07-02T19:33:56.713+0000] {processor.py:161} INFO - Started process (PID=301) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:33:56.716+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:33:56.717+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:33:56.717+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:33:56.794+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:33:56.822+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:33:56.822+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:33:56.847+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:33:56.847+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:33:56.868+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.162 seconds
+[2024-07-02T19:34:26.914+0000] {processor.py:161} INFO - Started process (PID=306) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:34:26.915+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:34:26.917+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:34:26.916+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:34:26.990+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:34:27.018+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:34:27.018+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:34:27.043+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:34:27.043+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:34:27.063+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.157 seconds
+[2024-07-02T19:34:57.271+0000] {processor.py:161} INFO - Started process (PID=311) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:34:57.273+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:34:57.274+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:34:57.274+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:34:57.351+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:34:57.380+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:34:57.380+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:34:57.406+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:34:57.406+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:34:57.427+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.164 seconds
+[2024-07-02T19:35:27.477+0000] {processor.py:161} INFO - Started process (PID=316) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:35:27.478+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:35:27.479+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:35:27.479+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:35:27.546+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:35:27.575+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:35:27.574+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:35:27.607+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:35:27.607+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:35:27.627+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.155 seconds
+[2024-07-02T19:35:57.836+0000] {processor.py:161} INFO - Started process (PID=321) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:35:57.838+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:35:57.839+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:35:57.839+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:35:57.907+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:35:57.935+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:35:57.934+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:35:57.958+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:35:57.958+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:35:57.977+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.150 seconds
+[2024-07-02T19:36:28.054+0000] {processor.py:161} INFO - Started process (PID=326) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:36:28.055+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:36:28.055+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:36:28.055+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:36:28.125+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:36:28.151+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:36:28.151+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:36:28.176+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:36:28.176+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:36:28.195+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.148 seconds
+[2024-07-02T19:36:58.371+0000] {processor.py:161} INFO - Started process (PID=331) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:36:58.373+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:36:58.374+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:36:58.374+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:36:58.444+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:36:58.472+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:36:58.471+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:36:58.499+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:36:58.499+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:36:58.522+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.158 seconds
+[2024-07-02T19:37:28.590+0000] {processor.py:161} INFO - Started process (PID=336) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:37:28.591+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:37:28.592+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:37:28.592+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:37:28.680+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:37:28.717+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:37:28.717+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:37:28.747+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:37:28.747+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:37:28.777+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.194 seconds
+[2024-07-02T19:37:58.937+0000] {processor.py:161} INFO - Started process (PID=341) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:37:58.939+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:37:58.940+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:37:58.940+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:37:59.023+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:37:59.054+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:37:59.054+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:37:59.086+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:37:59.086+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:37:59.109+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.179 seconds
+[2024-07-02T19:38:29.251+0000] {processor.py:161} INFO - Started process (PID=346) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:38:29.252+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:38:29.253+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:38:29.252+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:38:29.324+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:38:29.352+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:38:29.352+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:38:29.380+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:38:29.379+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:38:29.403+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.160 seconds
+[2024-07-02T19:38:59.580+0000] {processor.py:161} INFO - Started process (PID=351) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:38:59.581+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:38:59.582+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:38:59.582+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:38:59.661+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:38:59.701+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:38:59.700+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:38:59.732+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:38:59.732+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:38:59.758+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.185 seconds
+[2024-07-02T19:39:29.961+0000] {processor.py:161} INFO - Started process (PID=356) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:39:29.962+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:39:29.963+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:39:29.963+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:39:30.034+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:39:30.062+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:39:30.062+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:39:30.087+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:39:30.087+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:39:30.107+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.153 seconds
+[2024-07-02T19:40:00.170+0000] {processor.py:161} INFO - Started process (PID=361) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:40:00.171+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:40:00.172+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:40:00.172+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:40:00.246+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:40:00.273+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:40:00.273+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:40:00.297+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:40:00.297+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:40:00.316+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.155 seconds
+[2024-07-02T19:40:30.493+0000] {processor.py:161} INFO - Started process (PID=366) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:40:30.494+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:40:30.494+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:40:30.494+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:40:30.571+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:40:30.602+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:40:30.602+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:40:30.629+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:40:30.629+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:40:30.650+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.163 seconds
+[2024-07-02T19:41:00.805+0000] {processor.py:161} INFO - Started process (PID=371) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:41:00.808+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:41:00.809+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:41:00.808+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:41:00.883+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:41:00.911+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:41:00.910+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:41:00.941+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:41:00.940+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:41:00.960+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.162 seconds
+[2024-07-02T19:41:31.135+0000] {processor.py:161} INFO - Started process (PID=376) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:41:31.136+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:41:31.137+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:41:31.137+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:41:31.206+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:41:31.234+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:41:31.234+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:41:31.260+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:41:31.260+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:41:31.281+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.153 seconds
+[2024-07-02T19:42:01.315+0000] {processor.py:161} INFO - Started process (PID=381) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:42:01.317+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:42:01.319+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:42:01.318+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:42:01.446+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:42:01.483+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:42:01.483+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:42:01.509+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:42:01.509+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:42:01.534+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.225 seconds
+[2024-07-02T19:42:31.675+0000] {processor.py:161} INFO - Started process (PID=387) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:42:31.676+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:42:31.677+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:42:31.676+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:42:31.735+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:42:31.734+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed_gen
+  File "/opt/airflow/dags/gold_data_feed.py", line 17
+    directory_path = /opt/airflow/
+                     ^
+SyntaxError: invalid syntax
+[2024-07-02T19:42:31.736+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:42:31.755+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.087 seconds
+[2024-07-02T19:43:01.861+0000] {processor.py:161} INFO - Started process (PID=392) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:43:01.863+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:43:01.864+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:43:01.864+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:43:01.934+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:43:01.933+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed_gen
+  File "/opt/airflow/dags/gold_data_feed.py", line 17
+    directory_path = /opt/airflow/
+                     ^
+SyntaxError: invalid syntax
+[2024-07-02T19:43:01.935+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:43:01.952+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.099 seconds
+[2024-07-02T19:43:32.066+0000] {processor.py:161} INFO - Started process (PID=397) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:43:32.066+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:43:32.067+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:43:32.067+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:43:32.148+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:43:32.179+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:43:32.179+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:43:32.206+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:43:32.206+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:43:32.231+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.171 seconds
+[2024-07-02T19:44:02.386+0000] {processor.py:161} INFO - Started process (PID=413) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:44:02.387+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:44:02.388+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:44:02.388+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:44:02.466+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:44:02.498+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:44:02.498+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:44:02.527+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:44:02.527+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:44:02.548+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.170 seconds
+[2024-07-02T19:44:32.705+0000] {processor.py:161} INFO - Started process (PID=418) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:44:32.706+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:44:32.708+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:44:32.707+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:44:32.832+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:44:32.888+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:44:32.887+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:44:32.933+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:44:32.933+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:44:32.962+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.268 seconds
+[2024-07-02T19:45:03.151+0000] {processor.py:161} INFO - Started process (PID=425) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:45:03.153+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:45:03.154+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:45:03.154+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:45:03.230+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:45:03.261+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:45:03.261+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:45:03.286+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:45:03.286+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:45:03.308+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.164 seconds
+[2024-07-02T19:45:33.497+0000] {processor.py:161} INFO - Started process (PID=431) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:45:33.498+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:45:33.499+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:45:33.499+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:45:33.563+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:45:33.562+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/purchase_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/purchase_dag.py", line 10, in <module>
+    from gold_data_feed import gold_data_feed_gen
+  File "/opt/airflow/dags/gold_data_feed.py", line 31
+    writer.writerows(rows)
+                          ^
+IndentationError: unindent does not match any outer indentation level
+[2024-07-02T19:45:33.563+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:45:33.585+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.095 seconds
+[2024-07-02T19:46:03.697+0000] {processor.py:161} INFO - Started process (PID=436) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:46:03.699+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:46:03.700+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:46:03.700+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:46:03.779+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:46:03.809+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:46:03.809+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:46:03.834+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:46:03.834+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:46:03.857+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.168 seconds
+[2024-07-02T19:46:33.926+0000] {processor.py:161} INFO - Started process (PID=452) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:46:33.927+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:46:33.928+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:46:33.928+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:46:34.005+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:46:34.036+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:46:34.036+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:46:34.063+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:46:34.063+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:46:34.086+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.167 seconds
+[2024-07-02T19:47:04.177+0000] {processor.py:161} INFO - Started process (PID=459) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:47:04.179+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:47:04.181+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:47:04.180+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:47:04.252+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:47:04.282+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:47:04.282+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:47:04.306+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:47:04.306+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:47:04.327+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.159 seconds
+[2024-07-02T19:47:34.393+0000] {processor.py:161} INFO - Started process (PID=464) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:47:34.393+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:47:34.394+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:47:34.394+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:47:34.463+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:47:34.490+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:47:34.490+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:47:34.517+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:47:34.517+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:47:34.539+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.154 seconds
+[2024-07-02T19:48:27.585+0000] {processor.py:161} INFO - Started process (PID=160) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:48:27.587+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:48:27.590+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:48:27.589+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:48:27.699+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:48:27.731+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:48:27.730+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:48:27.769+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:48:27.769+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:48:27.797+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.221 seconds
+[2024-07-02T19:48:57.955+0000] {processor.py:161} INFO - Started process (PID=165) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:48:57.957+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:48:57.959+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:48:57.959+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:48:58.033+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:48:58.294+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:48:58.294+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:48:58.319+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:48:58.319+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:48:58.357+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.408 seconds
+[2024-07-02T19:49:28.500+0000] {processor.py:161} INFO - Started process (PID=181) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:49:28.503+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:49:28.505+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:49:28.505+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:49:28.580+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:49:28.614+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:49:28.614+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:49:28.646+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:49:28.646+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:49:28.667+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.173 seconds
+[2024-07-02T19:49:58.830+0000] {processor.py:161} INFO - Started process (PID=186) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:49:58.832+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:49:58.835+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:49:58.835+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:49:59.012+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:49:59.079+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:49:59.078+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:49:59.118+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:49:59.118+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:49:59.157+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.341 seconds
+[2024-07-02T19:50:29.355+0000] {processor.py:161} INFO - Started process (PID=193) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:50:29.356+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:50:29.359+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:50:29.359+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:50:29.447+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:50:29.478+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:50:29.478+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:50:29.504+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:50:29.504+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:50:29.525+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.176 seconds
+[2024-07-02T19:50:59.682+0000] {processor.py:161} INFO - Started process (PID=198) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:50:59.684+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:50:59.686+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:50:59.686+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:50:59.759+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:50:59.787+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:50:59.787+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:50:59.811+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:50:59.810+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:50:59.833+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.159 seconds
+[2024-07-02T19:51:29.986+0000] {processor.py:161} INFO - Started process (PID=203) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:51:29.988+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:51:29.990+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:51:29.990+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:51:30.065+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:51:30.094+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:51:30.094+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:51:30.122+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:51:30.121+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:51:30.148+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.167 seconds
+[2024-07-02T19:52:00.297+0000] {processor.py:161} INFO - Started process (PID=219) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:52:00.299+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:52:00.302+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:52:00.301+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:52:00.383+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:52:00.416+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:52:00.415+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:52:00.449+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:52:00.448+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:52:00.477+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.186 seconds
+[2024-07-02T19:52:30.652+0000] {processor.py:161} INFO - Started process (PID=226) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:52:30.655+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:52:30.656+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:52:30.656+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:52:30.722+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:52:30.751+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:52:30.751+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:52:30.777+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:52:30.777+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:52:30.799+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.153 seconds
+[2024-07-02T19:53:00.965+0000] {processor.py:161} INFO - Started process (PID=231) to work on /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:53:00.967+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/purchase_dag.py for tasks to queue
+[2024-07-02T19:53:00.969+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:53:00.968+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:53:01.042+0000] {processor.py:840} INFO - DAG(s) 'purchase_dag' retrieved from /opt/airflow/dags/purchase_dag.py
+[2024-07-02T19:53:01.069+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:53:01.069+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-02T19:53:01.093+0000] {logging_mixin.py:188} INFO - [2024-07-02T19:53:01.092+0000] {dag.py:3954} INFO - Setting next_dagrun for purchase_dag to 2024-07-02 00:00:00+00:00, run_after=2024-07-03 00:00:00+00:00
+[2024-07-02T19:53:01.113+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/purchase_dag.py took 0.155 seconds

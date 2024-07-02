@@ -7,6 +7,7 @@ from script_kafka import kafka_topic_creation
 from airflow.operators.python import (PythonOperator,)
 from create_tables import create_tables
 from create_lookup_table_script import create_lookup_table
+from gold_data_feed import gold_data_feed_gen
 # Default arguments for the DAG
 default_args = {
     'owner': 'airflow',
@@ -53,5 +54,8 @@ run_pyspark_job = DockerOperator(
     dag=dag,
 )
 
+#Python Operator to generate gold data feed.
+task_gold_data_feed=PythonOperator(task_id="gold_data_feed",python_callable=gold_data_feed_gen,dag=dag)
+
 #  Task dependencies
-task_kafka_topic_creation >> task_kafka_producer >> task_create_tables >> task_create_lookup_table >> run_pyspark_job
+task_kafka_topic_creation >> task_kafka_producer >> task_create_tables >> task_create_lookup_table >> run_pyspark_job >> task_gold_data_feed
