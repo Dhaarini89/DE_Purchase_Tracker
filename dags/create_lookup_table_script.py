@@ -19,7 +19,7 @@ def create_lookup_table():
  sql = f"""
     CREATE TABLE IF NOT EXISTS lookup_category (
     item_name VARCHAR(255) NOT NULL,
-    category VARCHAR(50));
+    item_category VARCHAR(50));
 
     """ 
  cur.execute(sql)
@@ -63,7 +63,7 @@ def create_lookup_table():
  }
 
  # Generate INSERT script
- insert_script = "INSERT INTO lookup_category (item_name, category) VALUES\n"
+ insert_script = "INSERT INTO lookup_category (item_name, item_category) VALUES\n"
  values = []
  for item_name, category in item_to_category.items():
     values.append(f"('{item_name}', '{category}')")

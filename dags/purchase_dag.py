@@ -39,19 +39,19 @@ task_create_tables = PythonOperator(task_id="table_creation",python_callable=cre
 #PythonOperator to create Loookup_Category table
 task_create_lookup_table = PythonOperator(task_id="create_lookup_table_script",python_callable=create_lookup_table,dag=dag)
     
-# DockerOperator to run the Bronze Layer job
+#DockerOperator to run End to End from Bronze to Gold layer.
 run_pyspark_job = DockerOperator(
     task_id='run_pyspark_job',
     image='bitnami/spark:latest',
     api_version='auto',
     auto_remove=True,
-    command='spark-submit /opt/bitnami/spark/scripts/load_bronze_table.py',
+    command='spark-submit --master local[*] --packages org.postgresql:postgresql:42.5.4,org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 /opt/bitnami/spark/scripts/spark_layers.py',
     docker_url='tcp://docker-proxy:2375',  # Ensure this is the correct Docker URL
     network_mode='airflow-kafka',
     environment={'SPARK_LOCAL_HOSTNAME': 'localhost'},
-    mounts=[Mount(source='/home/arun/Desktop/dhaarini/DataEngineer/Projects/Project_1/scripts', target='/opt/bitnami/spark/scripts',   type='bind')],
+    mounts=[Mount(source='/home/arun/Desktop/dhaarini/DataEngineer/Projects/DE_Purchase_Tracker/dags', target='/opt/bitnami/spark/scripts',   type='bind')],
     dag=dag,
 )
 
 #  Task dependencies
-task_kafka_topic_creation >> task_kafka_producer >> task_create_tables >> task_create_lookup_table
+task_kafka_topic_creation >> task_kafka_producer >> task_create_tables >> task_create_lookup_table >> run_pyspark_job

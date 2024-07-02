@@ -1,0 +1,62 @@
+[2024-07-02T11:24:36.968+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-02T11:24:37.001+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: purchase_dag.kafka_producer manual__2024-07-02T11:24:34.417194+00:00 [queued]>
+[2024-07-02T11:24:37.010+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: purchase_dag.kafka_producer manual__2024-07-02T11:24:34.417194+00:00 [queued]>
+[2024-07-02T11:24:37.010+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-07-02T11:24:37.024+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): kafka_producer> on 2024-07-02 11:24:34.417194+00:00
+[2024-07-02T11:24:37.033+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=577) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-02T11:24:37.034+0000] {standard_task_runner.py:63} INFO - Started process 578 to run task
+[2024-07-02T11:24:37.032+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'purchase_dag', 'kafka_producer', 'manual__2024-07-02T11:24:34.417194+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/purchase_dag.py', '--cfg-path', '/tmp/tmpug7o12jt']
+[2024-07-02T11:24:37.035+0000] {standard_task_runner.py:91} INFO - Job 34: Subtask kafka_producer
+[2024-07-02T11:24:37.048+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-02T11:24:37.079+0000] {task_command.py:426} INFO - Running <TaskInstance: purchase_dag.kafka_producer manual__2024-07-02T11:24:34.417194+00:00 [running]> on host 1bb3b4acd47e
+[2024-07-02T11:24:37.169+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='purchase_dag' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2024-07-02T11:24:34.417194+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-02T11:24:34.417194+00:00'
+[2024-07-02T11:24:37.170+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-02T11:24:37.186+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: connecting to kafka:9092 [('172.18.0.2', 9092) IPv4]
+[2024-07-02T11:24:37.187+0000] {conn.py:1206} INFO - Probing node bootstrap-0 broker version
+[2024-07-02T11:24:37.187+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: Connection complete.
+[2024-07-02T11:24:37.290+0000] {conn.py:1268} INFO - Broker version identified as 2.6.0
+[2024-07-02T11:24:37.290+0000] {conn.py:1269} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-07-02T11:24:37.293+0000] {logging_mixin.py:188} INFO - {'item_name': 'Laptop', 'date_of_purchase': '2023-01-01', 'cost': 1200.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.296+0000] {conn.py:380} INFO - <BrokerConnection node_id=0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: connecting to kafka:9092 [('172.18.0.2', 9092) IPv4]
+[2024-07-02T11:24:37.296+0000] {conn.py:410} INFO - <BrokerConnection node_id=0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.2', 9092)]>: Connection complete.
+[2024-07-02T11:24:37.297+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.2', 9092)]>: Closing connection. 
+[2024-07-02T11:24:37.299+0000] {logging_mixin.py:188} INFO - {'item_name': 'Smartphone', 'date_of_purchase': '2023-01-02', 'cost': 800.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.302+0000] {logging_mixin.py:188} INFO - {'item_name': 'Headphones', 'date_of_purchase': '2023-01-03', 'cost': 150.0, 'quantity': 2, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.304+0000] {logging_mixin.py:188} INFO - {'item_name': 'Tablet', 'date_of_purchase': '2023-01-04', 'cost': 300.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.306+0000] {logging_mixin.py:188} INFO - {'item_name': 'Office Chair', 'date_of_purchase': '2023-01-05', 'cost': 200.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.309+0000] {logging_mixin.py:188} INFO - {'item_name': 'Monitor', 'date_of_purchase': '2023-01-06', 'cost': 250.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.311+0000] {logging_mixin.py:188} INFO - {'item_name': 'Keyboard', 'date_of_purchase': '2023-01-07', 'cost': 50.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.313+0000] {logging_mixin.py:188} INFO - {'item_name': 'Mouse', 'date_of_purchase': '2023-01-08', 'cost': 30.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.316+0000] {logging_mixin.py:188} INFO - {'item_name': 'Printer', 'date_of_purchase': '2023-01-09', 'cost': 120.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.318+0000] {logging_mixin.py:188} INFO - {'item_name': 'Webcam', 'date_of_purchase': '2023-01-10', 'cost': 80.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.321+0000] {logging_mixin.py:188} INFO - {'item_name': 'Desk Lamp', 'date_of_purchase': '2023-01-11', 'cost': 40.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.323+0000] {logging_mixin.py:188} INFO - {'item_name': 'External Hard Drive', 'date_of_purchase': '2023-01-12', 'cost': 100.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.325+0000] {logging_mixin.py:188} INFO - {'item_name': 'Router', 'date_of_purchase': '2023-01-13', 'cost': 90.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.327+0000] {logging_mixin.py:188} INFO - {'item_name': 'Smartwatch', 'date_of_purchase': '2023-01-14', 'cost': 200.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.330+0000] {logging_mixin.py:188} INFO - {'item_name': 'Bluetooth Speaker', 'date_of_purchase': '2023-01-15', 'cost': 150.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.332+0000] {logging_mixin.py:188} INFO - {'item_name': 'Coffee Maker', 'date_of_purchase': '2023-01-16', 'cost': 80.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.334+0000] {logging_mixin.py:188} INFO - {'item_name': 'Electric Kettle', 'date_of_purchase': '2023-01-17', 'cost': 40.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.336+0000] {logging_mixin.py:188} INFO - {'item_name': 'Blender', 'date_of_purchase': '2023-01-18', 'cost': 60.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.337+0000] {logging_mixin.py:188} INFO - {'item_name': 'Microwave Oven', 'date_of_purchase': '2023-01-19', 'cost': 150.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.340+0000] {logging_mixin.py:188} INFO - {'item_name': 'Toaster', 'date_of_purchase': '2023-01-20', 'cost': 30.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.342+0000] {logging_mixin.py:188} INFO - {'item_name': 'Vacuum Cleaner', 'date_of_purchase': '2023-01-21', 'cost': 250.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.344+0000] {logging_mixin.py:188} INFO - {'item_name': 'Washing Machine', 'date_of_purchase': '2023-01-22', 'cost': 500.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.346+0000] {logging_mixin.py:188} INFO - {'item_name': 'Refrigerator', 'date_of_purchase': '2023-01-23', 'cost': 800.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.348+0000] {logging_mixin.py:188} INFO - {'item_name': 'Dishwasher', 'date_of_purchase': '2023-01-24', 'cost': 600.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.350+0000] {logging_mixin.py:188} INFO - {'item_name': 'Electric Shaver', 'date_of_purchase': '2023-01-25', 'cost': 70.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.352+0000] {logging_mixin.py:188} INFO - {'item_name': 'Hair Dryer', 'date_of_purchase': '2023-01-26', 'cost': 50.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.355+0000] {logging_mixin.py:188} INFO - {'item_name': 'Air Conditioner', 'date_of_purchase': '2023-01-27', 'cost': 1000.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.357+0000] {logging_mixin.py:188} INFO - {'item_name': 'Heater', 'date_of_purchase': '2023-01-28', 'cost': 120.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.359+0000] {logging_mixin.py:188} INFO - {'item_name': 'Fan', 'date_of_purchase': '2023-01-29', 'cost': 30.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.361+0000] {logging_mixin.py:188} INFO - {'item_name': 'Table', 'date_of_purchase': '2023-01-30', 'cost': 200.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.363+0000] {logging_mixin.py:188} INFO - {'item_name': 'Chair', 'date_of_purchase': '2023-01-31', 'cost': 100.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.365+0000] {logging_mixin.py:188} INFO - {'item_name': 'Bookshelf', 'date_of_purchase': '2023-02-01', 'cost': 150.0, 'quantity': 1, 'purchased_by': 'Mother', 'payment_method': 'Cash'}
+[2024-07-02T11:24:37.367+0000] {logging_mixin.py:188} INFO - {'item_name': 'Bed', 'date_of_purchase': '2023-02-02', 'cost': 500.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.369+0000] {logging_mixin.py:188} INFO - {'item_name': 'Wardrobe', 'date_of_purchase': '2023-02-02', 'cost': 500.0, 'quantity': 1, 'purchased_by': 'Father', 'payment_method': 'Card'}
+[2024-07-02T11:24:37.372+0000] {conn.py:919} INFO - <BrokerConnection node_id=0 host=kafka:9092 <connected> [IPv4 ('172.18.0.2', 9092)]>: Closing connection. 
+[2024-07-02T11:24:37.373+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-07-02T11:24:37.373+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-02T11:24:37.382+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=purchase_dag, task_id=kafka_producer, run_id=manual__2024-07-02T11:24:34.417194+00:00, execution_date=20240702T112434, start_date=20240702T112437, end_date=20240702T112437
+[2024-07-02T11:24:37.408+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-02T11:24:37.435+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-02T11:24:37.438+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -50,7 +50,7 @@ def create_tables():
     quantity INTEGER NOT NULL,
     purchased_by VARCHAR(255) NOT NULL,
     payment_method VARCHAR(50) NOT NULL,
-    purchased_category VARCHAR(50) );
+    item_category VARCHAR(50) );
 
     """
     msg="Silver table"
