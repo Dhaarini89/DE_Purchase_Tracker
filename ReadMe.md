@@ -1,5 +1,3 @@
-# DE_Purchase_Tracker
-
 Purchase Tracker: An End-to-End Data Engineering Project
 
 In this project, I have focused on a simple yet practical concept: tracking daily purchases. The objective is to gain fundamental knowledge and hands-on experience with key technologies in the data engineering stack. The technologies include PostgreSQL, Docker, Kafka, Airflow, Spark, and PySpark. This project will encompass the complete data engineering lifecycle, from data ingestion to processing and storage, following the medallion architecture.
@@ -15,6 +13,7 @@ Medallion Architecture:
 The medallion architecture divides data processing into three distinct layers: Bronze, Silver, and Gold.
 
 Bronze Layer:
+
 Raw data ingestion and storage.
 Data is stored as-is, without any transformations.
 Raw purchase events from Kafka streams.
@@ -50,4 +49,3 @@ Master the basics of Spark and PySpark for data processing.
 Understand how to use Airflow to schedule and monitor data workflows.
 
 By the end of this project, I have built a comprehensive data engineering pipeline capable of ingesting, storing, processing, and analyzing purchase data, providing a solid foundation in the key technologies used in the industry.
-
