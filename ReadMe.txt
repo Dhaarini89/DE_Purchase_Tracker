@@ -2,6 +2,7 @@ Purchase Tracker: An End-to-End Data Engineering Project
 
 In this project, I have focused on a simple yet practical concept: tracking daily purchases. The objective is to gain fundamental knowledge and hands-on experience with key technologies in the data engineering stack. The technologies include PostgreSQL, Docker, Kafka, Airflow, Spark, and PySpark. This project will encompass the complete data engineering lifecycle, from data ingestion to processing and storage, following the medallion architecture.
 
+![Screenshot of the project]DE_Draft.jpg
 Key Technologies:
 PostgreSQL: For structured data storage and querying.
 Docker: To create isolated environments for the different components of the project.
